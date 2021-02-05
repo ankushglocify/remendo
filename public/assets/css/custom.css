@@ -1,0 +1,617 @@
+body {margin:0;padding:0;font-family: 'Nunito', sans-serif;font-size: 16px;font-weight: 400;color: #616161;    background: #fff;}
+* {margin:0;padding:0;}
+a, a:hover {text-decoration: unset;}
+/*** Heder **/
+.header {
+    background: #fff;
+    box-shadow: 0 10px 30px 0 rgb(82 63 105 / 8%);
+    margin-bottom: 15px;
+}
+.dashboardLogo {
+    width: 100%;
+    max-width: 15%;
+}
+.dashboardMenu {
+    justify-content: space-between;
+    padding: 15px 0px;
+}
+.dashboardLogo img {
+    width: 100%;
+    max-width: 100%;
+}
+.menuList {
+    justify-content: flex-end;
+}
+.TopBar {
+    list-style: none;
+    margin-bottom: 0;
+}
+
+.TopBar li {
+    display: inline-block;
+}
+
+.TopBar li a {
+    font-size: 14px;
+    font-weight: 700;
+    padding: 0 .5rem;
+}
+.TopBar li a span, .TopBar li a:after, .TopBar li a i {
+    color: #191919;
+}
+a#userDropdown img {
+    border-radius: 50px;
+    margin: 0 5px 0 0;
+    display: block;
+    float: left;
+    width: 28px;
+    height: 28px;
+}
+.TopBar li:first-child {
+    margin-right: 8px;
+}
+.TopBar .dropdown-menu {
+    box-shadow: 0 0 30px 0 rgba(82,63,105,.05);
+    border: 1px solid #ebedf3;
+    padding: 0;
+}
+.TopBar .dropdown-menu>ul>li>a {
+    font-size: 13px;
+    font-weight: 400;
+    padding: 8px 10px;
+}
+.TopBar .dropdown-menu>ul>li {
+	margin-right: 0 !important;
+    display: block;
+}
+.TopBar li:nth-child(2) .dropdown-menu {
+	right:0 !important;left:unset;
+}
+.tabBody .fade {
+    opacity: 1;
+}
+
+
+/*** navbarMenu **/ 
+.orderTable {
+    margin-bottom: 0;
+}
+.navBarList {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 15px;
+    background: #fff;
+    /*box-shadow: 0 10px 30px 0 rgba(82,63,105,.08);*/
+}
+/*button#uploadFile {
+    width: 40px;
+}
+
+input#csvfileOrd {
+    opacity: 0;
+}
+
+button#uploadFile input#csvfileOrd {
+    width: 0px;
+}*/
+/*.orderList ul.nav-pills li {
+	position: relative;
+}*/
+/*.orderList ul.nav-pills li.active a.active {
+	 background: rgba(77,89,149,.06);
+}*/
+/*.orderList ul.nav-pills>li>a.active {
+	 background: rgba(77,89,149,.06);
+}
+
+.orderList ul.nav-pills li a {
+    border-radius: 4px;
+    padding: .5rem .75rem;
+    transition: all .3s ease;
+    cursor: pointer;
+    font-size: 12px;
+    color: #3f4254;
+    border: 1px solid #3f4254;
+    margin-right: 5px;
+}
+.orderList ul.nav-pills li:hover a {
+	background: rgb(61 24 191);
+	color: #fff;
+	border:1px solid rgb(61 24 191);
+}
+.orderList ul.nav-pills li:first-child a span, .orderList ul.nav-pills li a span {
+    background: transparent;
+    padding: 0;
+    border-radius: 50px;
+    font-weight: 700;
+    color: #3f4254;
+    margin-left: 3px;
+}
+.orderList ul.nav-pills li a.active span {
+    color: #fff;
+}
+.orderList ul.nav-pills li:hover a span {
+    background: transparent;
+    color: #fff;
+}*/
+.orderDetails .btn {
+    background: transparent;
+    border: 1px solid #3f4254;
+    width: 34px;
+    height: 34px;
+    text-align: center;
+    line-height: 33px;
+    padding: 2px;
+}
+.orderDetails .btn span i {
+    color: #232323;
+    font-size: 16px;
+}
+.orderDetails .btn:hover, .orderDetails .btn:focus {
+    background: rgb(61 24 191);
+    border: 1px solid #3d18bf;
+    box-shadow: unset;
+}
+.orderDetails .btn:hover i, .orderDetails .btn:focus i {
+	color: #fff;
+}
+/*.orderList ul.nav-pills li a.active {
+    background: rgb(61 24 191);
+    color: #fff;
+    border: 1px solid #3d18bf;
+}
+*/
+/** Search Bar **/
+.navbarMenu {
+    padding-bottom: 15px;background: #fff;
+}
+.tableBody {
+	padding: 0;
+}
+.contactHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #dee2e6;
+}
+.conatctTitle h3 {
+    font-size: 21px;
+    color: #191919;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+/*.orderSearchHistory {
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #dee2e6;
+    justify-content: space-between;
+}*/
+.contactBtn, .paginationList {
+	display: flex;
+	align-items: center;
+}
+.conatctTitle, .contactBtn {
+    width: 50%;
+}
+.searchorder {
+    width: 67.6%;
+}
+/*.searchorder {
+    width: 60%;
+}*/
+.paginationList {
+    width: 100%;
+    justify-content: space-between;
+    padding-top: 15px;
+}
+.shortList {
+    width: 24%;
+    text-align: right;
+}
+.searchorder>div {
+    margin-right: 15px;
+}
+.searchorder input {
+    height: 38px;
+    font-size: 14px;
+    padding: .25rem .25rem;
+}
+.shortList  select#num_rows {
+    width: 100%;
+    max-width: 20%;
+}
+.shortList label {
+    font-size: 14px;
+    margin-bottom: 0;
+    width: 100%;
+}
+.paginationList ul.pagination {
+	margin-bottom: 0; 
+}
+.paginationList ul.pagination li {
+    background: #ECF1F4;
+    margin: 0 3px;
+    border-radius: 5px;
+}
+.paginationList ul.pagination li a {
+    font-size: 14px;
+    border-radius: 5px;
+    color: #7e8299;
+    padding: 6px 10px;
+    border:1px solid #ced4da;
+}
+.addUserBtn {
+    background: #00abe1;
+    color: #fff;
+}
+.addUserBtn:hover {
+    background: #00abe1;
+    color: #fff;
+}
+
+/** Data Table Css **/
+
+
+.dataTable {
+    /*box-shadow: 0 0 30px 0 rgba(82,63,105,.05);*/
+    border: 0;
+}
+.orderTable>tr>th span {
+    color: #b5b5c3;
+    font-size: .9rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: .1rem;
+}
+.orderTable th.tableCell>span {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.orderTable td>span {
+    font-size: 12px;
+}
+.orderTable th.tableCell {
+    border-bottom: unset;
+    padding: .5rem .5rem;
+    border-top: unset;
+    vertical-align: top;
+}
+.orderTable td {
+	padding: .5rem .5rem;
+}
+.orderTable .tableCheckBox {
+    text-align: left;
+    padding: .75rem .25rem .5rem 0 !important;
+}
+.label.label-lg {
+    height: 24px;
+    width: 24px;
+    border-radius: 50px;
+    color: #fff;
+    background-color: #27c24c;
+    padding: 2px 8px;
+}
+.viewOrder, .editOrder {
+    width: 30px;
+    height: 30px;
+    background: #007bff;
+    line-height: 30px;
+    text-align: center;
+    padding: 0;
+}
+.editOrder {
+	background: #ffc107;
+	color: #232323;
+}
+.viewOrder i, .editOrder i {
+    font-size: 14px;
+    color: #fff;
+}
+/****/
+.orderTable .checkbox>span {
+    background-color: #ebedf3;
+    border: 1px solid transparent;
+    height: 18px;
+    width: 18px;
+    border-radius: 5px;
+}
+
+.orderTable .checkbox>input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+.orderTable .checkbox {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    position: relative;
+    text-align: left;
+    cursor: pointer;
+    font-size: 1rem;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+    margin: 0;
+    border-radius: 5px;
+}
+
+.orderTable .checkbox>input:checked~span {
+    background-color: #3699ff;
+}
+
+.orderTable .checkbox>input:checked~span:after {
+    border-color: #fff;
+    display: block;
+    width: 5px;
+    height: 10px;
+    content: '';
+    border-style: solid;
+    border-width: 0 2px 2px 0!important;
+    transform: rotate(45deg);
+    margin-top: 2px;
+    text-align: center;
+    margin-left: 5px;
+}
+
+
+
+/*** Login Css ***/
+.login {
+    background: #f8f8f8;
+    background-image: url(../images/bg-3.jpg);
+    display: flex;
+    flex-basis: 100%;
+    min-height: 100vh;
+    min-height: calc(var(--vh, 1vh)*100);
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.brand-logo img {
+    max-width: 60%;
+}
+.loginInfo {
+    transition: all .3s ease-in-out,background 0s,color 0s,border-color 0s;
+    width: 100%;
+    position: relative;
+    max-width: 450px;
+    margin: 0 auto;
+    border-radius: 1px solid #dadce0;
+    border-radius: 8px;
+}
+.login .card-body {
+    padding: 30px 40px 40px;
+}
+.login .card-body a.brand-logo {
+    margin: 1rem 0 1rem 0;
+    text-align: center;
+    display: block;
+}
+.login h4.card-title {
+    font-size: 24px;
+    margin-bottom: 20px !important;
+    text-align: center;
+    color: #232323;
+    font-weight: 600;
+}
+.login form.loginForm label, .checkbox a small {
+    font-size: 12px;
+    font-weight: 400;
+    margin: 4px 0;
+    display: flex;
+    align-items: center;
+}
+.login input[type=checkbox] {
+    margin-right: 5px;
+}
+.loginForm .form-group input {
+    height: 45px;
+    background: #f3f6f9;
+    border: 1px solid #f3f6f9;
+    font-size: 14px;
+}
+.loginForm .form-group input:focus {
+    background: #ebedf3;
+    border-color: #ebedf3;
+}
+.submitbtn {
+    background: #00abe1;
+    padding: 6px 5px 6px 5px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    border-radius: 50px;
+    box-shadow: 8px 8px 18px 0 rgba(0,171,225,.3);
+    display: inline-block;
+    position:relative;
+    overflow: hidden;
+    white-space: nowrap;
+    vertical-align: middle;
+    transition: all 0.2s ease-out;
+    -webkit-transition: all 0.2s ease-out;
+    width: 100%;
+    text-align: center;
+    margin-top: 15px;
+}
+.btnEffect:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    opacity: 1;
+    -webkit-transform: translate(-105%,0);
+    transform: translate(-105%,0);
+    background-color: rgba(255,255,255,.8);
+}
+.submitbtn:hover {
+  color: #fff;
+  text-decoration: unset;
+   box-shadow: unset;
+}
+.btnEffect:hover:before {
+    opacity: 0;
+    -webkit-transform: translate(0,0);
+    transform: translate(0,0);
+}
+/*** Dashboard ***/
+.birthdayList {
+    background: #03ace1;
+    padding: 30px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+}
+.birthdayIcon {
+    width: 60px;
+    height: 60px;
+    background: #fff;
+    border-radius: 50%;
+    line-height: 70px;
+    text-align: center;
+    margin-right: 15px;
+}
+.birthdayIcon i {
+    font-size: 30px;
+    color: #03ace1;
+}
+.birthdayList h2 {
+    font-size: 32px;
+    font-weight: 400;
+    color: #fff;
+    margin-bottom: 0;
+}
+
+/*** Footer ****/
+.dashboardFooter {
+    background: #051035;
+    padding: 15px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+.dashboardFooter p {
+    text-align: center;
+    margin-bottom: 0;
+    font-size: 12px;
+    color: #fff;
+    font-weight: 400;
+}
+
+
+
+
+/** Media Css ***/
+
+@media only screen and (min-width: 100px) and (max-width: 980px) {
+.dashboardLogo {
+	max-width: 40%;
+}
+.TopBar {
+margin-top: 12px;
+}
+.TopBar li {
+    display: block;
+    padding: 10px 0;
+}
+.navBarList {
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+}
+.orderDetails {
+    margin-bottom: 15px;
+}
+.orderList ul.nav-pills li {
+    width: 48%;
+    margin-bottom: 15px;
+}
+.orderList ul.nav-pills li a {
+    width: 100%;
+    display: block;
+}
+.orderList ul.nav-pills li:nth-child(odd) {
+    margin-right: 13px;
+}
+.masterDataBtn {
+	width: 100%;text-align: left;
+}
+.TopBar li:first-child {
+    margin-right: 0;
+}
+.TopBar li a {
+	padding: .25rem .5rem;
+    border: 1px solid #fff;
+    border-radius: .25rem;
+    text-align: left;
+}
+.TopBar .dropdown-menu {
+	width: 100%;
+}
+.TopBar .dropdown-menu>ul>li {
+    padding: 0;
+}
+.dropdown-toggle::after {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+}
+.navbar-dark .navbar-toggler {
+    border: unset !important;
+}
+.orderTable th.tableCell, .orderTable td {
+	white-space: nowrap;
+}
+.searchorder, .paginationList, .orderSearchHistory, .contactBtn {
+	flex-wrap: wrap;
+}
+.searchorder .conatctTitle, .contactBtn {
+    width: 100%;
+}
+.searchorder>div {
+    margin-right: 0;
+    width: 100%;
+    margin-bottom: 15px;
+}
+.paginationList {
+    width: 100%;
+    justify-content: space-between;
+    flex-direction: column-reverse;
+}
+.shortList {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 15px;
+}
+.searchorder {
+    margin-top: 15px;width: 100%;
+}
+.birthdayList {margin-bottom: 15px; }
+.birthdayList h2 {
+    font-size: 32px;
+}
+}
+@media only screen and (min-width: 100px) and (max-width: 320px) { 
+.orderList ul.nav-pills li {
+	width: 47%;
+}
+}
