@@ -166,7 +166,7 @@ class MemberController extends Controller
                     } 
                     $error_html= '';
                     if(count($error) > 0){
-                        print_r($error);
+                        //print_r($error);
                       foreach ($error as $keys => $errors) {
                            foreach ($errors as $key => $value) {
                            }
@@ -176,6 +176,7 @@ class MemberController extends Controller
                         return response()->json(['status' => 'error', 'msg' =>$error_html]);
                     }else{
                         $error_html.= "<p class='success_ajax'>Row ".$keys.", ".$value[0]." </p>";
+                        return response()->json(['status' => 'error', 'msg' =>$error_html]);
 
                     }
                      
