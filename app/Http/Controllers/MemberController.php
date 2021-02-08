@@ -175,8 +175,8 @@ class MemberController extends Controller
                         }  
                     }
                     
+                    
                 }
-                die();
             }else{
                 return response()->json(['status' => 'error', 'msg' =>'Please upload the csv file only.']);
             }
