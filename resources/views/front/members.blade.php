@@ -69,8 +69,8 @@
                          <td>{{$value->name}}</td>
                          <td>{{$value->phone}}</td>
                          <td>{{$value->email}}</td>
-                         <td>{{date('d-m-Y', strtotime($value->dob))}}</td>
-                         <td>{{date('d-m-Y', strtotime($value->aniversary))}}</td>
+                         <td>{{$value->dob ? date('d-m-Y', strtotime($value->dob)) :''}}</td>
+                         <td>{{$value->aniversary ? date('d-m-Y', strtotime($value->aniversary)) : ''}}</td>
                         </tr>
                         @endforeach
                       </tbody>

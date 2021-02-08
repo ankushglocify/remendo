@@ -112,11 +112,11 @@
       contentType: false,
       processData: false,
       success: function(response){
-        if(response != 0){
+        if(response.status == "error"){
           // Show image preview
-          $('#preview').append("<img src='"+response+"' width='100' height='100' style='display: inline-block;'>");
+          $('#preview').append(response.msg);
         }else{
-          alert('file not uploaded');
+          $('#preview').append(response.msg);
         }
       }
     });

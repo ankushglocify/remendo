@@ -164,18 +164,24 @@ class MemberController extends Controller
                                 ],$data);
                         }
                     } 
-                    //dd($error) ;
                     $error_html= '';
                     if(count($error) > 0){
+                        print_r($error);
                       foreach ($error as $keys => $errors) {
                            foreach ($errors as $key => $value) {
                            }
                             $error_html.= "<p class='error_ajax'>Row ".$keys.", ".$value[0]." </p>";
+                            
                         }  
+                        return response()->json(['status' => 'error', 'msg' =>$error_html]);
+                    }else{
+                        $error_html.= "<p class='success_ajax'>Row ".$keys.", ".$value[0]." </p>";
+
                     }
-                    
+                     
+                }else{
+                   return response()->json(['status' => 'error', 'msg' =>'Please upload the valid csv.']); 
                 }
-                die();
             }else{
                 return response()->json(['status' => 'error', 'msg' =>'Please upload the csv file only.']);
             }
