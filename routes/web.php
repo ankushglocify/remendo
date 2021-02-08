@@ -23,14 +23,15 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/members', 'MemberController@index')->name('members');
 Route::get('/getMembers', 'MemberController@getMembers')->name('getMembers');
 Route::get('/addMember', 'MemberController@addMember')->name('addMember');
-Route::post('/addMember', 'MemberController@addMember');
+Route::post('/addMember', 'MemberController@store');
+Route::post('/import', 'MemberController@import');
 
 Route::get('/all-tweets-csv', function(){
 
     $table = Member::all();
     $filename = "tweets.csv";
     $handle = fopen($filename, 'w+');
-    fputcsv($handle, array('name','email', 'phone', 'dob', '	aniversary'));
+    fputcsv($handle, array('name','email', 'phone', 'dob', 'aniversary'));
 
     foreach($table as $row) {
         fputcsv($handle, array('name', 'email', 'phone', date('Y-m-d'),date('Y-m-d')));

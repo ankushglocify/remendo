@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Member;
 use Auth;
+use Validator;
 use Illuminate\Http\Request;
 
 class MemberController extends Controller
@@ -27,7 +28,8 @@ class MemberController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function addMember()
-    {
+    {   
+
        return view('front.addMembers');
     }
 
@@ -39,7 +41,33 @@ class MemberController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $v = Validator::make($request->all(), [
+          'name'            => 'required',
+          'email'         => 'required|email|unique:members',
+          'phone'         => 'integer|digits:10'
+          
+        ]);
+
+      if ($v->fails()) {
+        return redirect()
+        ->back()->withInput($request->input())
+        ->withErrors($v->errors());
+      }
+      //dd($request->all());
+      $Auid = Auth::id();
+      $data = [
+        'name' =>  $request->name,
+        'email'  => $request->email,
+        'phone' => $request->phone,
+        'dob' =>  $request->dob,
+        'aniversary' => $request->aniversary,
+        'user_id' => $Auid
+
+      ];
+
+      $user = Member::updateOrCreate($data);
+      //$request->session()->flash('alert-success', 'successful added!');
+      return redirect()->to('/addMember')->with('success','successful added!');
     }
 
     /**
@@ -86,6 +114,75 @@ class MemberController extends Controller
     {
         //
     }
+
+    public function import(Request $request){
+        //dd($request->all());
+        $data = $request->all();
+        $Auid = Auth::id();
+        if(!empty($data['file'])){
+            $file = $request->file('file');
+            $filename = $file->getClientOriginalExtension();
+            if($filename != 'csv'){
+                
+                return response()->json(['status' => 'error', 'msg' =>'Please upload the csv file only.']);
+                die('test');
+            }
+                $path = request()->file('file')->getRealPath();
+               
+                $file = file($path);
+                $members = array_slice($file, 1);
+                if(count($members)){
+                    $data =[];
+                    $error =[];
+                    foreach($members as $key => $member)
+                    { 
+                        if($member != ''){
+                                $memberDataArray = explode(',', $member);
+                                $data = [
+                                'name' => $memberDataArray[0] ?? '',
+                                'email' => $memberDataArray[1] ?? '',
+                                'phone' => $memberDataArray[2] ?? '',
+                                'dob' => $memberDataArray[3] ? date('Y-m-d',strtotime($memberDataArray[3])) : '',
+                                'aniversary' => $memberDataArray[3] ? date('Y-m-d',strtotime($memberDataArray[4])) : '',
+                                'user_id' => $Auid,
+                                ];
+
+                                $v = Validator::make($data, [
+                              'name'            => 'required',
+                              'email'         => 'required|email|unique:members',
+                              'phone'         => 'integer|digits:10'
+                              
+                            ]);
+
+                          if ($v->fails()) {
+                             $error[$key+1] =$v->getMessageBag()->toArray();
+                             continue;
+                          }
+
+                                Member::updateOrcreate([
+                                'email' => $memberDataArray[1],
+                                ],$data);
+                        }
+                    } 
+                    //dd($error) ;
+                    $error_html= '';
+                    if(count($error) >){
+                      foreach ($error as $keys => $errors) {
+                           foreach ($errors as $key => $value) {
+                              print_r($value[0]);
+                           }
+                            $error_html.= "<p class='error_ajax'>Row ".$keys.", ".$value[0]." </p>";
+                        }  
+                    }
+                    
+                }
+                die();
+            }else{
+                return response()->json(['status' => 'error', 'msg' =>'Please upload the csv file only.']);
+            }
+        } 
+        
+    
 
     public function getMembers(Request $request){
         print_r($request->all());
