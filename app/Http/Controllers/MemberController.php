@@ -166,17 +166,16 @@ class MemberController extends Controller
                     } 
                     //dd($error) ;
                     $error_html= '';
-                    if(count($error) >){
+                    if(count($error) > 0){
                       foreach ($error as $keys => $errors) {
                            foreach ($errors as $key => $value) {
-                              print_r($value[0]);
                            }
                             $error_html.= "<p class='error_ajax'>Row ".$keys.", ".$value[0]." </p>";
                         }  
                     }
                     
-                    
                 }
+                die();
             }else{
                 return response()->json(['status' => 'error', 'msg' =>'Please upload the csv file only.']);
             }
