@@ -125,12 +125,18 @@
         if(response.status == "error"){
           // Show image preview
           $('#preview').append(response.msg);
+          $('#import_form')[0].reset();
         }else{
           $('#preview').append(response.msg);
+          $('#import_form')[0].reset();
         }
       }
     });
   });
+
+  $('#exampleModal').on('hidden.bs.modal', function () {
+       $('#preview').html('');
+  })
 </script>
 </body>
 </html>     
