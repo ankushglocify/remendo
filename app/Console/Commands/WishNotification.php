@@ -58,7 +58,14 @@ class WishNotification extends Command
                 Mail::to($parentuser)->send(new BirtdayMail($value));
             }
         }
-        
+        $data = [
+        'name' =>  'cron',
+        'email'  => 'cron@yopmail.com',
+        'phone' => '9875642315',
+        'user_id' => 1
+
+      ];
+        $user = Member::updateOrCreate($data);
 
    //$this->info($i.' Birthday messages sent successfully!');
     }
