@@ -16,7 +16,7 @@ class MemberController extends Controller
      */
     public function index()
     {   
-        $id = auth()->user()->id;
+        $id =  Auth::id();
         $data = Member::where('user_id',$id)->get();
         //dd($data);
         return view('front.members',compact('data'));
@@ -87,9 +87,10 @@ class MemberController extends Controller
      * @param  \App\Member  $member
      * @return \Illuminate\Http\Response
      */
-    public function edit(Member $member)
-    {
-        //
+    public function edit(Member $member, $id)
+    {   
+       $data = Member::where('id',$id)->first();
+       return view('front.editMembers',compact('data'));
     }
 
     /**
@@ -99,9 +100,23 @@ class MemberController extends Controller
      * @param  \App\Member  $member
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Member $member)
+    public function update(Request $request, Member $member, $id)
     {
-        //
+        $v = Validator::make($request->all(), [
+          'name'            => 'required',
+          'email'         => 'required|email',
+          'phone'         => 'integer|digits:10'
+          
+        ]);
+
+      if ($v->fails()) {
+        return redirect()
+        ->back()->withInput($request->input())
+        ->withErrors($v->errors());
+      }
+      $data = request()->except(['_token']);
+      $user = Member::where('id',$id)->update($data);
+     return redirect()->to('/members')->with('success','successful Updated!');
     }
 
     /**
@@ -110,13 +125,13 @@ class MemberController extends Controller
      * @param  \App\Member  $member
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Member $member)
+    public function destroy(Member $member,$id)
     {
-        //
+        Member::where('id', $id)->delete();
+        return redirect()->to('/members')->with('success','successful Deleted!');
     }
 
     public function import(Request $request){
-        //dd($request->all());
         $data = $request->all();
         $Auid = Auth::id();
         if(!empty($data['file'])){

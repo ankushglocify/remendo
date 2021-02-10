@@ -39,35 +39,17 @@
         </div>
         <div class="form-group">
           <label for="exampleInputPassword1">BIRTHDAY</label>
-          <input type="date" name="dob" class="form-control" id="member_dob" value="{{ old('dob') }}" placeholder="">
+          <input  name="dob" class="form-control datepicker" id="member_dob" value="{{ old('dob') }}" placeholder="">
         </div>
 
         <div class="form-group">
           <label for="exampleInputPassword1">ANIVERSARY</label>
-          <input type="date" name="aniversary" class="form-control" id="member_aniver" placeholder="" value="{{ old('aniversary') }}">
+          <input  name="aniversary" class="form-control datepicker" id="member_aniver" placeholder="" value="{{ old('aniversary') }}">
         </div>
         
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
   </div>
 </section>
-<div class="modal" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p>Modal body text goes here.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Save changes</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
+
 @endsection

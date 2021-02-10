@@ -18,11 +18,15 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+Route::group(['middleware' => 'auth'], function (){
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/members', 'MemberController@index')->name('members');
 Route::get('/getMembers', 'MemberController@getMembers')->name('getMembers');
 Route::get('/addMember', 'MemberController@addMember')->name('addMember');
+Route::get('/editMember/{id}', 'MemberController@edit')->name('editMember');
+Route::post('/editMember/{id}', 'MemberController@update')->name('updateMember');
+Route::get('/deleteMember/{id}', 'MemberController@destroy')->name('deleteMember');
 Route::post('/addMember', 'MemberController@store');
 Route::post('/import', 'MemberController@import');
 
@@ -34,7 +38,7 @@ Route::get('/all-tweets-csv', function(){
     fputcsv($handle, array('name','email', 'phone', 'dob', 'aniversary'));
 
     foreach($table as $row) {
-        fputcsv($handle, array('name', 'email', 'phone', date('Y-m-d'),date('Y-m-d')));
+        fputcsv($handle, array('ABC', 'abc@abc.com', '9999999999', date('Y-m-d'),date('Y-m-d')));
     }
 
     fclose($handle);
@@ -42,6 +46,7 @@ Route::get('/all-tweets-csv', function(){
     $headers = array(
         'Content-Type' => 'text/csv',
     );
-    download($filename, 'tweets.csv', $headers);
-    return redirect('/');
+  return response()->download($filename, 'tweets.csv', $headers);
+});
+
 });

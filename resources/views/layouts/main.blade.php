@@ -8,8 +8,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
   <link  rel="stylesheet" type="text/css" href="{{ asset('assets/css/custom.css') }}">
-  <link  rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css">
-  <!-- <link rel="icon" href="assets/images/favicon.png" type="image" sizes="48x48"> -->  
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
 <body>
@@ -24,7 +24,7 @@
           <div class="menuList collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="TopBar">
               <li>
-                <a href="{{url('/members')}}" class=""><span>Users</span></a>
+                <a href="{{url('/members')}}" class=""><span>Contacts</span></a>
               </li>
             <li class="nav-item dropdown no-arrow">
                   <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -61,13 +61,21 @@
   <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
 <script src="{{ asset('assets/js/popper.min.js') }}"></script>
 <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
-<script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap.min.js"></script>
+<script src="//cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script> -->
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> 
   <script>
     $(document).ready(function(){
       $('[data-toggle="tooltip"]').tooltip();   
     });
-    $('#user_data_table').DataTable();
+
+    $( ".datepicker" ).datepicker({
+      dateFormat: "yy-mm-dd",
+      changeMonth: true,
+      changeYear: true,
+      yearRange: "-100:+0",
+    });
+    $('#dataTableAllOrder').DataTable();
      /*$(document).ready(function () {
       dtable = $('#user_data_table').DataTable({
           "processing": true,
@@ -102,6 +110,8 @@
 
     });
   });*/
+
+  $('.dataTables_filter').addClass('pull-right');
   $('#btn_upload').click(function(){
     var fd = new FormData($("#import_form")[0]);
     // AJAX request
