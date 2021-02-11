@@ -15,9 +15,9 @@
 <body>
   <!-- Header -->
   <header class="header">
-    <div class="container-fluid">
+    <div class="container">
         <nav class="navbar navbar-expand-md navbar-dark dashboardMenu ">
-          <a class="dashboardLogo" href="index.html"><img src="{{ asset('assets/images/logo.png') }}" alt="Logo"></a>
+          <a class="dashboardLogo" href="/"><img src="{{ asset('assets/images/logo.png') }}" alt="Logo"></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -33,7 +33,7 @@
                   </a>
                 <div class="dropdown-menu" aria-labelledby="pagesDropdown">
                 <ul>
-                    <li><a class="dropdown-item" href="#" onclick="openNav()">Profile</a></li>
+                    <li><a class="dropdown-item" href="{{url('/profile')}}" >Profile</a></li>
                     <li><a class="dropdown-item" href="{{url('logout')}}">Logout</a></li>
                 </ul>
                   <form id="logout-form" action="https://www.printslips.com/logout" method="POST" style="display: none;">
@@ -111,7 +111,7 @@
     });
   });*/
 
-  $('.dataTables_filter').addClass('pull-right');
+  $('.dataTables_filter').addClass('serchInput');
   $('#btn_upload').click(function(){
     var fd = new FormData($("#import_form")[0]);
     // AJAX request

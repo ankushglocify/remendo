@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Member;
 use Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 
 class HomeController extends Controller
 {
@@ -24,8 +25,28 @@ class HomeController extends Controller
      */
     public function index()
     {   
-        $dob = Member::whereDate('dob', date('Y-m-d'))->count();
-        $aniver = Member::whereDate('aniversary', date('Y-m-d'))->count();
-        return view('dashboard',compact('dob','aniver'));
+        $date = now();
+
+       $dob= Member::whereMonth('dob', '>', $date->month)
+           ->orWhere(function ($query) use ($date) {
+               $query->whereMonth('dob', '=', $date->month)
+                   ->whereDay('dob', '>=', $date->day);
+
+           })
+           ->orderByRaw("DAYOFMONTH('dob')",'ASC')
+           ->get();
+
+        $aniversary= Member::whereMonth('aniversary', '>', $date->month)
+       ->orWhere(function ($query) use ($date) {
+           $query->whereMonth('aniversary', '=', $date->month)
+               ->whereDay('aniversary', '>=', $date->day);
+
+       })
+       ->orderByRaw("DAYOFMONTH('aniversary')",'ASC')
+       ->get();
+       $dob_count = count($dob);
+       $aniversary_count = count($aniversary);
+
+        return view('dashboard',compact('dob','aniversary','dob_count','aniversary_count'));
     }
 }

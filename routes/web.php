@@ -21,6 +21,8 @@ Auth::routes();
 Route::group(['middleware' => 'auth'], function (){
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/profile', 'UserController@index')->name('profile');
+Route::post('/profile', 'UserController@update')->name('updateprofile');
 Route::get('/members', 'MemberController@index')->name('members');
 Route::get('/getMembers', 'MemberController@getMembers')->name('getMembers');
 Route::get('/addMember', 'MemberController@addMember')->name('addMember');
@@ -33,20 +35,11 @@ Route::post('/import', 'MemberController@import');
 Route::get('/all-tweets-csv', function(){
 
     $table = Member::all();
-    $filename = "tweets.csv";
-    $handle = fopen($filename, 'w+');
-    fputcsv($handle, array('name','email', 'phone', 'dob', 'aniversary'));
-
-    foreach($table as $row) {
-        fputcsv($handle, array('ABC', 'abc@abc.com', '9999999999', date('Y-m-d'),date('Y-m-d')));
-    }
-
-    fclose($handle);
-
+    $filename = "sample.csv";
     $headers = array(
         'Content-Type' => 'text/csv',
     );
-  return response()->download($filename, 'tweets.csv', $headers);
+  return response()->download($filename, 'sample.csv', $headers);
 });
 
 });

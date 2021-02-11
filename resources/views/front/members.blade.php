@@ -2,7 +2,7 @@
 
 @section('content')
 <!---- Dashboard ----->
-<section class="navbarMenu">
+<section class="contactLists">
   <div class="flash-message">
     @if($errors->any())
     <p class="alert alert-danger">{{$errors->first()}}</p>
@@ -22,21 +22,21 @@
     <strong>{{ $message }}</strong>
     </div>
   @endif
-  <div class="container-fluid">
-      <div class="tabBody" id="myTabContentEx">
-          <div id="home-ex" class="contactTable">
-            <div class="card dataTable">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="card contactTable">
               <div class="card-body tableBody">
                 <div class="contactHeader">
                     <div class="conatctTitle">
                       <h3>Contact List</h3>
                     </div>
                     <div class="contactBtn">
-                      <div class="searchorder">
+                      <!-- <div class="searchorder">
                         <div class="input-icon">
                             <input type="text" class="form-control" placeholder="Search...">
                         </div>
-                      </div>
+                      </div> -->
                       <div class="addBtns">
                         <a href="{{url('/addMember')}}"><button type="button" class="btn btn default addUserBtn"> <i class="fas fa-user-plus"></i> <span>Add user</span></button></a>
                         <button type="button" class="btn btn-default addUserBtn" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-file-import"></i> <span>Import</span></button>
@@ -96,7 +96,7 @@
         <form method='post' action='' enctype="multipart/form-data" id="import_form">
           {{ csrf_field() }}
           Select file : <input type='file' name='file' id='file_import' class='form-control' ><br>
-          <!-- <input type='button' class='btn btn-info' value='Upload' id='btn_upload'> -->
+          Download Sample CSV : <a href="{{url('all-tweets-csv')}}"><button type="button" class="btn btn-primary" >Download Csv</button></a>
         </form>
 
         <!-- Preview-->
@@ -105,7 +105,7 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary" id='btn_upload'>Upload</button>
-        <a href="{{url('all-tweets-csv')}}"><button type="button" class="btn btn-primary" id='btn_upload'>Sample Csv</button></a>
+        
       </div>
     </div>
   </div>

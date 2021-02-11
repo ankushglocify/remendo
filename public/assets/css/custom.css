@@ -1,11 +1,9 @@
-body {margin:0;padding:0;font-family: 'Nunito', sans-serif;font-size: 16px;font-weight: 400;color: #616161;    background: #fff;}
+body {margin:0;padding:0;font-family: 'Nunito', sans-serif;font-size: 16px;font-weight: 400;color: #616161;background:#eef0f8;}
 * {margin:0;padding:0;}
 a, a:hover {text-decoration: unset;}
 /*** Heder **/
 .header {
     background: #fff;
-    box-shadow: 0 10px 30px 0 rgb(82 63 105 / 8%);
-    margin-bottom: 15px;
 }
 .dashboardLogo {
     width: 100%;
@@ -163,8 +161,8 @@ button#uploadFile input#csvfileOrd {
 }
 */
 /** Search Bar **/
-.navbarMenu {
-    padding-bottom: 15px;background: #fff;
+.contactLists {
+    padding-bottom: 15px;background:#eef0f8;    padding: 20px 0;
 }
 .tableBody {
 	padding: 0;
@@ -194,11 +192,11 @@ button#uploadFile input#csvfileOrd {
 	display: flex;
 	align-items: center;
 }
-.conatctTitle, .contactBtn {
+/*.conatctTitle, .contactBtn {
     width: 50%;
-}
+}*/
 .searchorder {
-    width: 67.6%;
+    width: 58%;
 }
 /*.searchorder {
     width: 60%;
@@ -256,9 +254,12 @@ button#uploadFile input#csvfileOrd {
 /** Data Table Css **/
 
 
-.dataTable {
-    /*box-shadow: 0 0 30px 0 rgba(82,63,105,.05);*/
+.contactTable {
+    box-shadow: 0 0 30px 0 rgb(82 63 105 / 5%);
     border: 0;
+    background: #fff;
+    padding: 2rem 2.25rem;
+    border-radius: 15px;
 }
 .orderTable>tr>th span {
     color: #b5b5c3;
@@ -282,7 +283,8 @@ button#uploadFile input#csvfileOrd {
     vertical-align: top;
 }
 .orderTable td {
-	padding: .5rem .5rem;
+	padding: .5rem .5rem;font-size: 12px;
+    color: #3f4254;
 }
 .orderTable .tableCheckBox {
     text-align: left;
@@ -474,25 +476,30 @@ button#uploadFile input#csvfileOrd {
     transform: translate(0,0);
 }
 /*** Dashboard ***/
+.dashboard {
+    padding: 30px 0;
+}
 .birthdayList {
     background: #03ace1;
-    padding: 30px;
+    padding: 20px 20px;
     border-radius: 15px;
     display: flex;
     align-items: center;
+    height: 100%;
+    flex-wrap: wrap;
 }
 .birthdayIcon {
     width: 60px;
     height: 60px;
-    background: #fff;
+    background: rgba(25,255,255,.5);
     border-radius: 50%;
     line-height: 70px;
     text-align: center;
     margin-right: 15px;
 }
 .birthdayIcon i {
-    font-size: 30px;
-    color: #03ace1;
+    font-size: 26px;
+    color: #fff;
 }
 .birthdayList h2 {
     font-size: 32px;
@@ -500,7 +507,16 @@ button#uploadFile input#csvfileOrd {
     color: #fff;
     margin-bottom: 0;
 }
-
+.birthdayBody {
+    display: block;
+    width: 100%;
+    padding-top: 10px;
+}
+.birthdayList p {
+    margin-bottom: 0;
+    font-size: 16px;
+    color: #fff;
+}
 /*** Footer ****/
 .dashboardFooter {
     background: #051035;
@@ -516,8 +532,27 @@ button#uploadFile input#csvfileOrd {
     color: #fff;
     font-weight: 400;
 }
-
-
+.serchInput {
+    text-align: right;
+}
+.serchInput input {
+    height: 32px;
+    padding: .55rem .75rem;
+    font-size: .925rem;
+    line-height: 1.35;
+    border-radius: .28rem;
+    color: #3f4254;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #e4e6ef;
+}
+div#dataTableAllOrder_length {
+    width: 50%;
+    float: left;
+}
+div#dataTableAllOrder_wrapper {
+    margin-top: 20px;
+}
 
 
 /** Media Css ***/
@@ -608,6 +643,9 @@ margin-top: 12px;
 .birthdayList {margin-bottom: 15px; }
 .birthdayList h2 {
     font-size: 32px;
+}
+.marginBottom {
+    margin-bottom: 15px;
 }
 }
 @media only screen and (min-width: 100px) and (max-width: 320px) { 
