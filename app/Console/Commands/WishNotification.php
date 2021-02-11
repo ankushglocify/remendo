@@ -42,18 +42,24 @@ class WishNotification extends Command
      */
     public function handle()
     {
-         $users = Member::whereMonth('dob', '=', date('m'))->whereDay('dob', '=', date('d'))->get(); 
+         $users = Member::whereMonth('dob', '=', date('m'))->whereDay('dob', '=', date('d'))->orWhere(function($query){
+                                   $query->whereMonth('aniversary', '=', date('m'))->whereDay('aniversary', '=', date('d')); })->get(); 
          $data =[];
          foreach($users as $user){
 
                 $parentuser = $user->user->email;
                 $user_name =  $user->name;
-                $data[$parentuser][] = ['name' =>$user->name ,'email' =>$user->email];
+                $monthday = date("m-d"); 
+                    $aniversary = date("m-d",strtotime($user->dob));
+                  /*  if($aniversary == $monthday ){
+                        dd('test');
+                    }*/
+                $data[$parentuser][] = ['username'=>$user->user->name, 'name' =>$user->name ,'email' =>$user->email, 'dob' =>$user->dob, 'aniversary' =>$user->aniversary];
                
         }
         
         if(count($data) > 0){
-            foreach ($data as $key => $value) {;
+            foreach ($data as $key => $value) {
                 $email=$key;
                 Mail::to($parentuser)->send(new BirtdayMail($value));
             }
