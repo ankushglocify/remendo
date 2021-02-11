@@ -665,6 +665,23 @@ outline:unset;
     border: #00abe1;
 }
 
+.orderTable td a {
+width: 30px;
+height: 30px;
+background: #27c24c;
+line-height: 30px;
+text-align: center;
+padding: 0;
+display: inline-block;
+border-radius: 5px;
+}
+.orderTable td a i {
+color: #fff;
+}
+.orderTable td a:last-child {
+background: #ff001b;
+}
+
 /** Media Css ***/
 
 @media only screen and (min-width: 100px) and (max-width: 980px) {
