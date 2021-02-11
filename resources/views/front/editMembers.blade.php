@@ -22,33 +22,40 @@
     <strong>{{ $message }}</strong>
     </div>
   @endif
-  <div class="container-fluid">
-      <form action="{{url('editMember')}}/{{$data->id}}" method="post">
-       {{ csrf_field() }}
-        <div class="form-group">
-          <label for="exampleInputEmail1">NAME</label>
-          <input type="name" name="name" class="form-control" id="member_name" value="{{ $data->name}}" aria-describedby="emailHelp" placeholder="Enter email">
-        </div>
-        <div class="form-group">
-          <label for="exampleInputPassword1">EMAIL</label>
-          <input type="email" name="email" class="form-control" id="member_email" value="{{$data->email}}" placeholder="abc@abc.com">
-        </div>
-        <div class="form-group">
-          <label for="exampleInputPassword1">PHONE NUMBER</label>
-          <input type="tel" name="phone" class="form-control" id="member_phone" value="{{$data->phone}}" placeholder="">
-        </div>
-        <div class="form-group">
-          <label for="exampleInputPassword1">BIRTHDAY</label>
-          <input  name="dob" class="form-control datepicker" id="member_dob" value="{{ $data->dob}}" placeholder="">
-        </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="profileForm">
+          <form action="{{url('editMember')}}/{{$data->id}}" method="post">
+           {{ csrf_field() }}
+            <div class="form-group">
+              <label for="exampleInputEmail1">NAME</label>
+              <input type="name" name="name" class="form-control" id="member_name" value="{{ $data->name}}" aria-describedby="emailHelp" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">EMAIL</label>
+              <input type="email" name="email" class="form-control" id="member_email" value="{{$data->email}}" placeholder="abc@abc.com">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">PHONE NUMBER</label>
+              <input type="tel" name="phone" class="form-control" id="member_phone" value="{{$data->phone}}" placeholder="">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">BIRTHDAY</label>
+              <input  name="dob" class="form-control datepicker" id="member_dob" value="{{ $data->dob}}" placeholder="">
+            </div>
 
-        <div class="form-group">
-          <label for="exampleInputPassword1">ANIVERSARY</label>
-          <input name="aniversary" class="form-control datepicker" id="member_aniver" placeholder="" value="{{$data->aniversary}}">
+            <div class="form-group">
+              <label for="exampleInputPassword1">ANIVERSARY</label>
+              <input name="aniversary" class="form-control datepicker" id="member_aniver" placeholder="" value="{{$data->aniversary}}">
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Update</button>
+          </form>
         </div>
-        
-        <button type="submit" class="btn btn-primary">Update</button>
-      </form>
+      </div>
+    </div>
+      
   </div>
 </section>
 <div class="modal" tabindex="-1" role="dialog">
