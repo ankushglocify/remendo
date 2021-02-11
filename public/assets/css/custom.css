@@ -555,6 +555,67 @@ div#dataTableAllOrder_wrapper {
 }
 
 
+.serchInput input {
+margin-left: 10px;
+}
+.serchInput label, div#dataTableAllOrder_length label, div#dataTableAllOrder_paginate a {
+font-size: 13px;
+font-weight: 400;
+color: #3f4254;
+}
+div#dataTableAllOrder_length label {
+display: flex;
+align-items: center;
+}
+div#dataTableAllOrder_length label select {
+height: 32px;
+font-size: .925rem;
+padding: 7px 26px 7px 0px;
+font-size: 12px;
+font-weight: 400;
+line-height: 1.5;
+color: #3f4254;
+vertical-align: middle;
+border: 1px solid #e4e6ef;
+border-radius: 5px;
+width: auto;
+margin: 0 5px;
+}
+.orderTable th.tableCell {
+padding: 1rem 1rem;
+}
+.orderTable td {
+padding: 1rem 1rem;
+font-size: 12px;
+color: #3f4254;
+}
+div#dataTableAllOrder_info {
+display: none;
+}
+
+div#dataTableAllOrder_paginate span a.paginate_button.current {
+transition: color .15s ease,background-color .15s ease,border-color .15s ease,box-shadow .15s ease,-webkit-box-shadow .15s ease;
+background-color: #3699ff;
+color: #fff;
+height: 30px;
+width: 30px;
+padding: 5px 11px;
+position: relative;
+font-size: .9rem;
+line-height: 23px;
+font-weight: 500;
+border-radius: .42rem;
+margin: 0 8px;
+display: inline-block;
+}
+div#dataTableAllOrder_paginate {
+text-align: center;
+padding-top: 12px;
+}
+.serchInput input:focus {
+outline:unset;
+}
+
 /** Media Css ***/
 
 @media only screen and (min-width: 100px) and (max-width: 980px) {
@@ -646,6 +707,15 @@ margin-top: 12px;
 }
 .marginBottom {
     margin-bottom: 15px;
+}
+.conatctTitle {
+margin-bottom: 13px;
+}
+.contactTable {
+padding: 1.5rem 1.25rem;
+}
+.serchInput {
+text-align: left;
 }
 }
 @media only screen and (min-width: 100px) and (max-width: 320px) { 
