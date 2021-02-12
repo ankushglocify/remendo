@@ -50,28 +50,41 @@ class WishNotification extends Command
                 $parentuser = $user->user->email;
                 $user_name =  $user->name;
                 $monthday = date("m-d"); 
-                    $aniversary = date("m-d",strtotime($user->dob));
-                  /*  if($aniversary == $monthday ){
-                        dd('test');
-                    }*/
-                $data[$parentuser][] = ['username'=>$user->user->name, 'name' =>$user->name ,'email' =>$user->email, 'dob' =>$user->dob, 'aniversary' =>$user->aniversary];
+                $eventaniversary = '';
+                $eventdob = '';
+                $aniversary = date("m-d",strtotime($user->aniversary));
+                $dob = date("m-d",strtotime($user->dob));
+                    if($aniversary == $monthday ){
+                        $eventType = 'Aniversary';
+                        $date = date('F, d',strtotime($user->aniversary));
+                    }
+                    if($dob == $monthday ){
+                        $eventType = 'Birthday';
+                        $date = date('F, d',strtotime($user->dob));
+                    }
+                    if($aniversary == $monthday && $dob == $monthday){
+                        $eventType = 'Aniversary , Birthday';
+                    }
+                $data[$parentuser][] = ['username'=>$user->user->name, 'name' =>$user->name ,'email' =>$user->email, 'eventType' =>$eventType,'date' =>$date,'phone' => $user->phone];
                
         }
         
         if(count($data) > 0){
+           
             foreach ($data as $key => $value) {
                 $email=$key;
-                Mail::to($parentuser)->send(new BirtdayMail($value));
+                try{
+                Mail::to($email)->send(new BirtdayMail($value));
+                echo "string";
             }
+            catch(Exception $e){
+                echo $e->getMessage();// Never reached
+            }
+                
+                }
+    
         }
-        $data = [
-        'name' =>  'cron',
-        'email'  => 'cron@yopmail.com',
-        'phone' => '9875642315',
-        'user_id' => 1
-
-      ];
-        $user = Member::updateOrCreate($data);
+        
 
    //$this->info($i.' Birthday messages sent successfully!');
     }
