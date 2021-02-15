@@ -26,7 +26,7 @@ class HomeController extends Controller
     public function index()
     {   
         $date = now();
-
+        $id = Auth::id();
        $dob= Member::whereMonth('dob', '>', $date->month)
            ->orWhere(function ($query) use ($date) {
                $query->whereMonth('dob', '=', $date->month)
