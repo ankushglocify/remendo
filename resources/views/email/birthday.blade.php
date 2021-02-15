@@ -81,24 +81,12 @@
     </style>
 </head>
 
-<body style="background: url({{ asset('assets/images/background.png') }});background-position: right;   background-size: contain;background-repeat: no-repeat; margin: 0 !important; padding: 0 !important;">
+<body style="margin: 0 !important; padding: 0 !important;">
     <!-- HIDDEN PREHEADER TEXT -->
-    <div style="display: none; font-size: 1px; color: #fefefe; line-height: 1px; font-family: 'Nunito', sans-serif;font-weight: 600; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;"> We’re excited to have you get started!</div>
-    <table border="0" cellpadding="0" cellspacing="0" width="100%">
-        <!-- <tr>
-            <td style="padding: 80px 10px 0px 10px;" align="center" style="">
-                <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
-                    <tr>
-                        <td bgcolor="#ffffff" align="center" valign="top" style="padding: 40px 0 0;">
-                            <a href="https://splark.com" style=""><img style="width: 100%;max-width: 40%;" src="images/logo.png" alt=""/></a>
-                        </td>
-                    </tr>
-                </table>
-            </td>
-        </tr> -->
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;margin: 20px auto;box-shadow: 0 8px 30px rgb(0 0 0 / 20%);">
         <tr>
-            <td class="emailContent" bgcolor="" align="center" style="padding: 30px 10px 0px 10px;">
-                <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;box-shadow: 0 8px 30px rgb(0 0 0 / 20%);">
+            <td class="emailContent" bgcolor="" align="center" style="">
+                <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
                 	<tr>
                         <td  align="center" valign="top" style="padding: 40px 0 0;background: url({{ asset('assets/images/service_shape-top.png') }});background-repeat: no-repeat;    background-size: 38% 100%;position: relative;background-color: #fff;">
                             <a href="{{url('/')}}" style=""><img style="width: 100%;max-width: 40%;" src="{{ asset('assets/images/logo.png') }}" alt=""/></a>
