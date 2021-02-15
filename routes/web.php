@@ -13,8 +13,11 @@ use App\Member;
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return redirect('/login');
+});*/
+Route::get('/', function () {
+    return view('frontPage');
 });
 
 Auth::routes();

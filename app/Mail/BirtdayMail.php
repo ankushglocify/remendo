@@ -31,7 +31,7 @@ class BirtdayMail extends Mailable
 
         $user = $this->user;
         //dd($user);
-        return $this->from('info@remindio.in')
+        return $this->from('naveen@glocify.com')
               ->view('email.birthday',compact('user'));
     }
 }

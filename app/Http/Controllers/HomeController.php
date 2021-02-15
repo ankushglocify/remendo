@@ -33,7 +33,7 @@ class HomeController extends Controller
                    ->whereDay('dob', '>=', $date->day);
 
            })
-           ->orderByRaw("DAYOFMONTH('dob')",'ASC')
+           ->orderByRaw("DAYOFMONTH('dob')",'ASC')->where('user_id',$id)
            ->get();
 
         $aniversary= Member::whereMonth('aniversary', '>', $date->month)
@@ -42,7 +42,7 @@ class HomeController extends Controller
                ->whereDay('aniversary', '>=', $date->day);
 
        })
-       ->orderByRaw("DAYOFMONTH('aniversary')",'ASC')
+       ->orderByRaw("DAYOFMONTH('aniversary')",'ASC')->where('user_id',$id)
        ->get();
        $dob_count = count($dob);
        $aniversary_count = count($aniversary);

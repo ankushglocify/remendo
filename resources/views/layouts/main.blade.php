@@ -9,8 +9,9 @@
   <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
   <link  rel="stylesheet" type="text/css" href="{{ asset('assets/css/custom.css') }}">
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link href="{{ asset('assets/css/all.css') }}" rel="stylesheet"> <!--load all styles -->
+  <link rel="icon" href="{{ asset('assets/images/favicon.png') }}" type="image" sizes="48x48">
   
-  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
 <body>
   <!-- Header -->
@@ -64,6 +65,8 @@
 <script src="//cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
 <!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script> -->
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> 
+  <script src="{{ asset('assets/js/all.js') }}"></script>
+
   <script>
     $(document).ready(function(){
       $('[data-toggle="tooltip"]').tooltip();   

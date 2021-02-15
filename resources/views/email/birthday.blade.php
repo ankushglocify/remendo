@@ -160,7 +160,7 @@
                          <p style="margin: 0;font-size: 16px;font-weight: 400;color: #232323;">If you have any questions, feel free to reach back to you us.</p>
                     </tr>
                     <tr>
-                        <td bgcolor="#ffffff" align="left" style="padding: 40px 30px 40px 30px;font-family: 'Nunito', sans-serif;background: url(images/service_shape.png);    background-repeat: no-repeat;background-position: right;   background-color: #fff;background-size: 43% 100%;">
+                        <td bgcolor="#ffffff" align="left" style="padding: 40px 30px 40px 30px;font-family: 'Nunito', sans-serif;background: url({{ asset('assets/images/service_shape.png') }});    background-repeat: no-repeat;background-position: right;   background-color: #fff;background-size: 43% 100%;">
                          <p style="margin: 0;font-size: 16px;font-weight: 400;color: #232323;">Thanks,</p>
                          <p style="margin: 0;font-size: 16px;font-weight: 400;color: #232323;">Remindio Team</p>
 

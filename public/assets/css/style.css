@@ -1,0 +1,541 @@
+body {margin:0;padding:0;font-family: 'Nunito', sans-serif;font-size: 16px;font-weight: 400;color: #616161;}
+* {margin:0;padding:0;}
+
+h1 {
+  font-size: 42px;
+    font-weight: 700;
+    color: #232323;
+}
+/** Header Css ***/
+.header {
+    padding: 17px 0;
+    background: #fff;
+    position: relative;
+    box-shadow: 8px 8px 30px 0 rgba(41.999999999999986,67.00000000000004,113,.15);
+}
+.menuList {
+    justify-content: flex-end;
+}
+.menuList ul li a {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin: 0 12px;
+    padding: 10px 15px !important;
+}
+.navbarMenu {
+    padding: 0;width: 100%;
+}
+.menuList ul li a.demoBtn {
+  color: #fff !important;
+}
+.demoBtn:hover  {box-shadow: unset;
+}
+/*.navbar-dark .navbar-toggler {
+    color: #5d3df9;
+    border-color: #5d3df9;
+    background: #5d3df9;
+}*/
+.navbar-dark .navbar-nav .nav-link {
+    color: #232323;
+}
+.navbar-dark .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .nav-link:focus {
+  color: #3d18bf;outline: unset;
+}
+.btnEffect:hover i {
+    background: #0beed3;
+    color: #3d18bf;
+}
+.navbar-dark .navbar-toggler-icon {
+    background-image: url(../images/menu.svg) !important;background-size: 50px;
+}
+.navbar-toggler:focus {
+    outline: unset;
+}
+.navbar-toggler {
+    padding: 0;
+}
+a.navbarLogo {
+    width: 100%;
+    max-width: 19%;
+}
+/** Banner Css ***/
+.webBanner {
+    background: url(../images/home-bg.png) no-repeat top right;
+    background-size: cover;
+    height: 794px;
+}
+.webBannerText {
+    padding: 30% 0;
+}
+.webBannerText h1 {
+    font-size: 45px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 25px;
+}
+.webBannerText h5 {
+    font-size: 21px;
+    line-height: 40px;
+    font-weight: 400;
+    width: 100%;
+    max-width: 75%;
+    color: #fff;
+}
+.scheduleDemoBtn, .demoBtn {
+    background-image: linear-gradient(20deg, #015EEA 23%, #02A3F4 98%);
+    padding: 6px 5px 6px 30px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    border-radius: 50px;
+    box-shadow: 8px 8px 18px 0 rgb(1 100 235/ 30%);
+    display: inline-block;
+    position:relative;
+    overflow: hidden;
+    white-space: nowrap;
+    vertical-align: middle;
+    transition: all 0.2s ease-out;
+    -webkit-transition: all 0.2s ease-out;
+}
+.scheduleDemoBtn:hover {
+  color: #fff;
+  text-decoration: unset;
+   box-shadow: unset;
+}
+.scheduleBtn {
+    margin-top: 50px;
+}
+.scheduleDemoBtn span {
+    background: #fff;
+    color: #02ace1;
+    width: 40px;
+    height: 40px;
+    line-height: 40px !important;
+    text-align: center;
+    display: inline-block;
+    margin-left: 14px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    -ms-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+    }
+.btnEffect:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    opacity: 1;
+    -webkit-transform: translate(-105%,0);
+    transform: translate(-105%,0);
+    background-color: rgba(255,255,255,.8);
+}
+.btnEffect:hover:before {
+    opacity: 0;
+    -webkit-transform: translate(0,0);
+    transform: translate(0,0);
+}
+
+
+/*** Why Remindio **/
+.whyPrintSlip {
+  background: url(../images/why-bg.png);
+  background-position: center right;
+  background-repeat: no-repeat;
+  padding: 80px 0 100px;
+  margin-bottom: 30px;
+  background-size: contain;
+}
+.whyChoose {
+  margin-top: 20px;
+}
+.whyPrintSlipTitle {
+    text-align: center;
+}
+.whySlide {
+    display: flex;
+    align-items: center;
+}
+.slideImg img {
+    width: 100%;
+    max-width: 100%;
+}
+.slideImg {
+    width: 50%;
+}
+.slideText {
+    width: 50%;
+}
+.slideText h3 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #232323;
+}
+ul.slderList {
+    list-style: none;
+     margin-top: 40px;
+}
+ul.slderList li {
+    display: flex;
+    align-items: flex-start;
+    padding-bottom: 20px;
+}
+ul.slderList li img {
+    width: 23px;
+    margin-right: 15px;
+}
+ul.slderList li span {
+    width: 100%;
+    max-width: 70%;
+}
+.sliderBtn {
+    margin-top:0; 
+}
+.professional {
+    background: url(../images/why-bg-1.png);
+  background-position: center left;
+  background-repeat: no-repeat;
+  padding: 80px 0 100px;
+  margin-bottom: 30px;
+  background-size: contain;
+}
+.professionalText, .professionalImg {
+    width: 100%;
+}
+
+/** Slider **/
+/*.slick-arrow {
+    display: block !important;
+}
+ul.slick-dots {
+    display: none !important
+}*/
+/*.slick-dots li button {
+    width: 25px;
+    height: 5px;
+    padding: 0;
+    background: #bfcadc;
+}
+.slick-dots li.slick-active button {
+  background: #3800fa;
+}
+.slick-dots li button:before, .slick-dots li.slick-active button:before {
+  opacity: 0;
+}
+.slick-dots {
+  bottom: -70px;
+}*/
+/*button.slick-prev.slick-arrow, button.slick-next.slick-arrow {
+    background: #fff;
+    box-shadow: 0 0 25px rgb(0 0 0 / 10%);
+    width: 50px;
+    height: 50px;line-height: 1.5;
+    border-radius: 50%;
+    z-index: 1;
+}
+.slick-prev:before, .slick-next:before {
+    color: #191919;
+}
+.slick-prev {
+    left: -12px;
+}
+.slick-next {
+    right: -12px;
+}*/
+/*** Integartion Section **/
+.integration {
+    background: #eff2f7;padding: 80px 0;
+}
+.integrationTitle {
+    text-align: center;
+}
+
+/*.integrationTitle h1 {
+    font-size: 42px;
+    font-weight: 700;
+    color: #232323;
+}
+*/
+.integrationTitle h5 {
+    font-size: 21px;
+    font-weight: 600;
+    color: #616161;
+}
+
+
+/*** How It Works **/
+.howItWorks {
+  /*background: url(../images/about-bg.png);
+  background-position: top center;
+  background-repeat: no-repeat;*/
+  padding: 70px 0 70px;
+  background-size: 128% 103%;
+}
+.worksbody {
+    padding: 40px 24px 48px;
+    position: relative;
+    border-radius: 15px;
+    text-align: center;
+    min-height: 330px;
+    box-shadow: 8px 8px 30px 0 rgb(42 67 113 / 15%);z-index: 1;
+    transition: all 0.3s linear;
+    overflow: hidden;
+}
+.worksbody:hover {
+    transform: translateY(-8px);
+}
+.worksbody .bgBefore {
+    background-color: #FFF;
+    background-image: url(../images/bg1-box2-1.png) !important;
+    background-repeat: no-repeat !important;
+    opacity: 1;
+    visibility: visible;
+}
+.worksbody .bgAfter {
+    background-color: #FFF;
+    background-image: url(../images/bg2-box2-1.png) !important;
+    background-repeat: no-repeat !important;
+    opacity: 1;
+    visibility: visible;
+}
+.worksbody .bgBefore, .worksbody .bgAfter {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    background: #fff;
+    z-index: -1;
+    transition: all 0.3s linear;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    -ms-transition: all 0.3s linear;
+}
+.worksbody .bgBefore {
+    top: 0px;
+    left: 0;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+ }
+.worksbody .bgAfter {
+    bottom: 0;
+    right: 0;
+    background-position: bottom right;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+.worksContent h4 {
+    font-size: 19px;
+    font-weight: 700;
+    color: #232323;
+}
+.worksContent {
+    text-align: center;
+    padding-top: 40px;
+}
+.worksContent p {
+    font-size: 14px;
+    font-weight: 400;
+    color: #616161;
+    margin-top: 12px;
+}
+.worksIcon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(145deg,#0039e4,#04dbf1);
+    border-radius: 50%;
+    line-height: 80px;
+    text-align: center;
+    font-size: 30px;
+    margin: 0 auto;
+    color: #fff;
+}
+
+
+
+
+/*** Testimonial **/
+/*.Testimonial {
+    background: #eff2f7;
+    padding: 70px 0 30px;
+}
+.testimonialSlide {
+    transition: all .5s ease 0s;
+    position: relative;
+    margin: 40px 15px;
+    background: url(../images/testi_bg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 15px; 
+    padding: 50px;
+}
+.testi_content {
+    position: relative;
+    padding-top: 45px;
+    padding: 30px ​120px 25px 120px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.testi_text {
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+}
+.test_thumb {
+    position: relative;
+    display: inline-block;
+    margin-right: 20px;
+}
+.test_thumb img {
+    border-radius: 100%;
+    width: 90px;
+    margin: auto;
+    display: block;
+}
+.testi_title {
+    margin-bottom: 4px;
+    margin-top: 20px;
+}
+.testi_title h2 {
+    font-size: 20px;
+    margin-bottom: 0px;
+    text-transform: capitalize;
+    letter-spacing: 0;
+    font-weight: 700;
+    color: #fff;
+}
+.testi_title h2 span {
+    color: #fff;
+    font-weight: 500;
+    font-size: 16px;
+    display: block;
+    padding-top: 5px;
+}*/
+/*.testi_content:before {
+  content: '';
+    bottom: -20px;
+    top: auto;
+    border-color: #fff transparent transparent #fff;
+    display: block;
+    position: absolute;
+    left: 0;
+    margin-left: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 15px;
+}
+*/
+.quoteImg img {text-align: center;margin: 0 auto 30px;}
+.clientImg {
+    text-align: center;
+}
+
+
+/**** Footer*****/
+.footerBottom {
+    background: #051035;padding: 18px 0;
+}
+.copyRight p, ul.bottommenuList li a, .bottomList p, ul.bottommenuList li {
+    font-size: 12px;
+    font-weight: 400;
+    color: #fff;
+    margin-bottom: 0;
+}
+ul.bottommenuList {
+    list-style: none;
+    margin-bottom: 0;
+}
+ul.bottommenuList li {
+    display: inline-block;
+}
+.bottomList {
+    text-align: right;
+}
+.copyRight p {
+    margin-top: 4px;
+}
+.socialList {
+    margin-top: 20px;
+}
+
+
+
+/****** Media Query ******/
+@media only screen and (min-width:768px) and (max-width:1024px) {
+.webBanner {background-size: cover;height: 1100px;}
+.webBannerText {padding: 20px 0 0;}
+.webBannerText h1 {font-size: 44px;}
+.webBannerText h5, ul.slderList li span {max-width: 100%;}
+.sliderBtn a {box-shadow: unset;}
+.howItWorks {background-size: cover;}
+.signupBody {background-image: url(../images/bg-block-1.png);height: 100%;padding: 70px 30px;}
+.signupBody h2 {font-size: 34px;}
+.signupBody h4 {font-size: 22px;}
+.webBanner .row {flex-direction: column-reverse;}
+}
+
+@media only screen and (min-width:100px) and (max-width:767px) {
+a.navbarLogo {max-width: 60%;}
+h1 {font-size: 30px;}
+.navbarMenu {padding: 0 20px;}
+.webBanner .row, .professional .row {
+flex-direction: column-reverse;
+}
+.worksbody.mt-5 {
+margin-top: 0rem !important;
+}
+.howItWorks .col-lg-4.col-md-6.col-sm-12 {
+margin-bottom: 20px;
+}
+.webBanner {background-size: cover;height: 830px;}
+.webBannerText {padding: 10% 0 0;}
+.webBannerText h5, ul.slderList li span {max-width: 100%;}
+.webBannerText h1 {font-size: 32px;}
+.whyPrintSlip, .professional {padding: 40px 0 40px;margin-bottom: 0;}
+.whySlide {flex-wrap: wrap;}
+.slideImg {width: 100%;}
+.slideText {width: 100%;margin-top: 20px;}
+.slideText h3 {font-size: 24px;}
+.integrationTitle h5 {font-size: 18px;}
+.howItWorks {background: unset;}
+.signupBody {background-image: url(../images/bg-block-1.png);height: 100%;padding: 60px 20px;}
+.signupAccount {padding: 0;}
+.signupBody h2 {font-size: 30px;line-height: 36px; margin-bottom: 10px;}
+.signupBody h4 {font-size: 18px;}
+.socialList {padding-top: 20px;}
+.menuLink {padding-top: 10px;}
+.copyRight, .bottomList {text-align: center;}
+.worksbody {min-height: 100%;}
+.testi_content {padding: 35px 30px 35px;}
+.menuList {margin-top: 20px;}
+.navbar-dark .navbar-nav .nav-link {color: #232323;text-align: center;}
+.demoBtn {display: none;}
+.menuList ul li {background: #f5f5f5;}
+.menuList ul li:first-child {margin-bottom: 5px;}
+.scheduleBtn {text-align: center;}
+}
+@media only screen and (min-width:100px) and (max-width:320px) {
+h1 {font-size: 30px;}
+.webBannerText h1 {font-size: 30px;}
+.webBannerText h5 {font-size: 18px;}
+.webBanner {height: 830px;}
+.slideText h3 {font-size: 24px;}
+.scheduleDemoBtn, .demoBtn {font-size:15px;}
+}

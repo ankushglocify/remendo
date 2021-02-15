@@ -1,6 +1,9 @@
 body {margin:0;padding:0;font-family: 'Nunito', sans-serif;font-size: 16px;font-weight: 400;color: #616161;background:#eef0f8;}
 * {margin:0;padding:0;}
 a, a:hover {text-decoration: unset;}
+.navbar-dark .navbar-toggler-icon {
+background-image: url(../images/menu.svg) !important;background-size: 50px;
+}
 /*** Heder **/
 .header {
     background: #fff;
@@ -674,6 +677,7 @@ text-align: center;
 padding: 0;
 display: inline-block;
 border-radius: 5px;
+color: #fff;
 }
 .orderTable td a i {
 color: #fff;
