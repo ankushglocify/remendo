@@ -6,6 +6,9 @@ h1 {
     font-weight: 700;
     color: #232323;
 }
+a:focus {
+    outline: unset;
+}
 /** Header Css ***/
 .header {
     padding: 17px 0;

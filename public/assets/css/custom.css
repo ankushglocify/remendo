@@ -5,6 +5,9 @@ a, a:hover {text-decoration: unset;}
 background-image: url(../images/menu.svg) !important;background-size: 50px;
 }
 /*** Heder **/
+a:focus {
+    outline: unset;
+}
 .header {
     background: #fff;
 }
@@ -483,7 +486,7 @@ button#uploadFile input#csvfileOrd {
     padding: 30px 0;
 }
 .birthdayList {
-    background: #03ace1;
+    background: #285fdb;
     padding: 20px 20px;
     border-radius: 15px;
     display: flex;
@@ -491,19 +494,20 @@ button#uploadFile input#csvfileOrd {
     height: 100%;
     flex-wrap: wrap;
 }
+.birthdayIcon svg {
+font-size: 26px;
+color: #fff;
+}
 .birthdayIcon {
     width: 60px;
     height: 60px;
-    background: rgba(25,255,255,.5);
+    background: rgba(255,255,255,.3);
     border-radius: 50%;
     line-height: 70px;
     text-align: center;
     margin-right: 15px;
 }
-.birthdayIcon i {
-    font-size: 26px;
-    color: #fff;
-}
+
 .birthdayList h2 {
     font-size: 32px;
     font-weight: 400;
@@ -787,9 +791,26 @@ padding: 1.5rem 1.25rem;
 .serchInput {
 text-align: left;
 }
+.login .card-body, .profileForm {
+padding: 30px 20px 40px;
+}
+.profileForm button.btn-primary {
+max-width:100%;
+}
+.dashboardLogo {
+max-width: 60%;
+}
+.navbar-dark .navbar-toggler:focus, .dashboardLogo:focus {
+outline: unset;
+}
 }
 @media only screen and (min-width: 100px) and (max-width: 320px) { 
 .orderList ul.nav-pills li {
 	width: 47%;
 }
 }
+
+
+
+
+
