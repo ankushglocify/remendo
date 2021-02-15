@@ -83,10 +83,10 @@
 
 <body style="margin: 0 !important; padding: 0 !important;">
     <!-- HIDDEN PREHEADER TEXT -->
-    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;margin: 20px auto;box-shadow: 0 8px 30px rgb(0 0 0 / 20%);">
+    <table border="0" cellpadding="0" cellspacing="0" style="width:100%;max-width: 600px;margin: 20px auto;box-shadow: 0 8px 30px rgb(0 0 0 / 20%);">
         <tr>
             <td class="emailContent" bgcolor="" align="center" style="">
-                <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;box-shadow: 0 8px 30px rgb(0 0 0 / 15%);margin: 20px auto;">
+                <table border="0" cellpadding="0" cellspacing="0" style="width:100%;max-width: 600px;box-shadow: 0 8px 30px rgb(0 0 0 / 15%);margin: 20px auto;">
                 	<tr>
                         <td  align="center" valign="top" style="padding: 40px 0 0;background: url({{ asset('assets/images/service_shape-top.png') }});background-repeat: no-repeat;    background-size: 38% 100%;position: relative;background-color: #fff;">
                             <a href="{{url('/')}}" style=""><img style="width: 100%;max-width: 40%;" src="{{ asset('assets/images/logo.png') }}" alt=""/></a>
