@@ -496,7 +496,14 @@ ul.slick-dots {
 .socialList {
     margin-top: 20px;
 }
-
+input#file_import {
+    border: unset;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #00abe1;
+    border-color: #00abe1;
+}
 
 
 /****** Media Query ******/
@@ -511,6 +518,16 @@ ul.slick-dots {
 .signupBody h2 {font-size: 34px;}
 .signupBody h4 {font-size: 22px;}
 .webBanner .row {flex-direction: column-reverse;}
+.webBanner {
+    background: url(../images/mobile-bg.png) no-repeat top right;
+    height: 780px;
+}
+.whyPrintSlip, .professional {
+    padding: 50px 0 50px;
+}
+.worksbody {
+    margin-top: 3rem !important;
+}
 }
 
 @media only screen and (min-width:100px) and (max-width:767px) {
@@ -558,6 +575,9 @@ margin-bottom: 20px;
     animation-name: none !important;
     visibility: visible !important;
 }
+.howItWorks {
+    padding: 40px 0 40px;
+}
 }
 @media only screen and (min-width:100px) and (max-width:320px) {
     h1 {font-size: 30px;}
@@ -567,4 +587,13 @@ margin-bottom: 20px;
     .slideText h3 {font-size: 18px;text-align: center;}
     .scheduleDemoBtn, .demoBtn {font-size:15px;}
     ul.slderList li span {font-size: 14px;}
+    .menuList ul li:first-child {
+    margin-bottom: 0;
+}
+.webBanner {
+    height: 600px;
+}
+.howItWorks .row.mt-5 {
+    margin-top: 1rem !important;
+}
 }
