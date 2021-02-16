@@ -5,16 +5,29 @@
   <section class="webBanner">
     <div class="container">
       <div class="row">
-        <div class="col-lg-6 col-md-12 col-sm-12">
+        <div class="col-lg-7 col-md-12 col-sm-12">
           <div class="webBannerText wow bounceInLeft" data-wow-offset="300">
-            <h1>Never Forget Birthday/Annevirsary</h1>
+            <div class="bannerText">
+              <h1>Never Forget</h1>
+              <div
+                  class="animate-typing animateText"
+                  data-animate-loop="true"
+                  data-type-speed="300"
+                  data-type-delay="300"
+                  data-remove-speed="100"
+                  data-remove-delay="500"
+                  data-cursor-speed="200">
+                      A Birthday|
+                      Anniversary|
+              </div>
+            </div>
             <h5>The Only App That Personal Reminders For Your Loved once via Text sms & Email.</h5>
             <div class="scheduleBtn">
-              <a href="#" class="scheduleDemoBtn btnEffect">Free Sign Up <span><i class="fas fa-arrow-right"></i></span></a>
+              <a href="{{url('/register')}}" class="scheduleDemoBtn btnEffect">Free Sign Up <span><i class="fas fa-arrow-right"></i></span></a>
             </div>
           </div>
         </div>
-        <div class="col-lg-6 col-md-12 col-sm-12">
+        <div class="col-lg-5 col-md-12 col-sm-12">
           <div class="webBannerText wow bounceInLeft" data-wow-offset="300">
             <img src="assets/images/banner-img.png" class="img-fluid" alt="bannerImg">
           </div>

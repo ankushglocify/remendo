@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
   <link  rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}">
   <link  rel="stylesheet" type="text/css" href="{{ asset('assets/css/animate.css') }}">
+   <link href="{{ asset('assets/css/jquerysctipttop.css') }}" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <link href="{{ asset('assets/css/all.css') }}" rel="stylesheet"> <!--load all styles -->
   <link rel="icon" href="{{ asset('assets/images/favicon.png') }}" type="image" sizes="48x48">
@@ -72,6 +73,7 @@
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> 
   <script src="{{ asset('assets/js/all.js') }}"></script>
   <script src="{{ asset('assets/js/wow.js') }}"></script>
+  <script src="{{ asset('assets/js/jquery.animateTyping.js')}}"></script>
   <script>
     wow = new WOW(
       {
@@ -103,6 +105,34 @@
         } 
       });
     });
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<script>
+try {
+  fetch(new Request("https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js", { method: 'HEAD', mode: 'no-cors' })).then(function(response) {
+    return true;
+  }).catch(function(e) {
+    var carbonScript = document.createElement("script");
+    carbonScript.src = "//cdn.carbonads.com/carbon.js?serve=CK7DKKQU&placement=wwwjqueryscriptnet";
+    carbonScript.id = "_carbonads_js";
+    document.getElementById("carbon-block").appendChild(carbonScript);
+  });
+} catch (error) {
+  console.log(error);
+}
 </script>
 </body>
 </html>     

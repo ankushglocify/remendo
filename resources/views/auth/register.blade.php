@@ -52,7 +52,10 @@
 
                             
                             <button type="submit" class="btn btn-default submitbtn btnEffect">Submit</button>
-                            <a href="{{ route('login') }}" class="" target="_self"><small>Login</small></a>
+                             <div class="signUp">
+                              <span>If you already have an account?
+                               <a href="{{ route('login') }}" class="" target="_self">Login</a></span>
+                          </div>
                          </form>
                     </div>
                 </div>

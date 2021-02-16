@@ -33,7 +33,10 @@
                               <a href="{{ route('password.request') }}" class="" target="_self"><small>Forgot Password?</small></a>
                             </div>
                             <button type="submit" class="btn btn-default submitbtn btnEffect">Submit</button>
-                            <a href="{{ route('register') }}" class="" target="_self"><small>Register</small></a>
+                            <div class="signUp">
+                              <span>Don't have an account?
+                              <a href="{{ route('register') }}" class="" target="_self"> Sign up</a></span>
+                          </div>
                          </form>
                     </div>
                 </div>

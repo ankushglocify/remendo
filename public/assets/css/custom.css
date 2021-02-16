@@ -689,6 +689,16 @@ color: #fff;
 .orderTable td a:last-child {
 background: #ff001b;
 }
+.signUp span {
+    font-size: 14px;
+    font-weight: 500;
+    color: #616161;
+    text-align: center;
+    display: block;
+}
+.submitbtn {
+    margin-bottom: 20px;
+}
 
 /** Media Css ***/
 
