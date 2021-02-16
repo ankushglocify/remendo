@@ -56,7 +56,7 @@ a:focus {
     color: #232323;
 }
 .navbar-dark .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .nav-link:focus {
-  color: #3d18bf;outline: unset;
+   color: #00abe1; outline: unset;
 }
 .btnEffect:hover i {
     background: #0beed3;
@@ -501,7 +501,7 @@ ul.slick-dots {
 
 /****** Media Query ******/
 @media only screen and (min-width:768px) and (max-width:1024px) {
-.webBanner {background-size: cover;height: 1100px;}
+.webBanner {background: url(../images/mobile-bg.png) no-repeat top right;background-size: cover;height: 680px;}
 .webBannerText {padding: 20px 0 0;}
 .webBannerText h1 {font-size: 44px;}
 .webBannerText h5, ul.slderList li span {max-width: 100%;}
@@ -549,17 +549,22 @@ margin-bottom: 20px;
 .menuList {margin-top: 20px;}
 .navbar-dark .navbar-nav .nav-link {color: #232323;text-align: center;}
 .demoBtn {display: none;}
-.menuList ul li {background: #f5f5f5;}
+.menuList ul li {background: transparent;}
 .menuList ul li:first-child {margin-bottom: 5px;}
 .scheduleBtn {text-align: center;}
 .animateText {font-size: 40px;margin-left: 0;margin-bottom: 10px; }
 .bannerText {display: block;}
+.wow {
+    animation-name: none !important;
+    visibility: visible !important;
+}
 }
 @media only screen and (min-width:100px) and (max-width:320px) {
-h1 {font-size: 30px;}
-.webBannerText h1 {font-size: 30px;}
-.webBannerText h5 {font-size: 18px;}
-.webBanner {height: 830px;}
-.slideText h3 {font-size: 24px;}
-.scheduleDemoBtn, .demoBtn {font-size:15px;}
+    h1 {font-size: 30px;}
+    .webBannerText h1, .animateText {font-size: 30px;}
+    .webBannerText h5 {font-size: 18px;}
+    .webBanner {height: 830px;}
+    .slideText h3 {font-size: 18px;text-align: center;}
+    .scheduleDemoBtn, .demoBtn {font-size:15px;}
+    ul.slderList li span {font-size: 14px;}
 }

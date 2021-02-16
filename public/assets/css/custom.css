@@ -702,7 +702,7 @@ background: #ff001b;
 
 /** Media Css ***/
 
-@media only screen and (min-width: 100px) and (max-width: 980px) {
+@media only screen and (min-width: 100px) and (max-width: 767px) {
 .dashboardLogo {
 	max-width: 40%;
 }
