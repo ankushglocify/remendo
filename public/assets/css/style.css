@@ -501,7 +501,7 @@ ul.slick-dots {
 
 /****** Media Query ******/
 @media only screen and (min-width:768px) and (max-width:1024px) {
-.webBanner {background: url(../images/mobile-bg.png) no-repeat top right;background-size: cover;height: 680px;}
+
 .webBannerText {padding: 20px 0 0;}
 .webBannerText h1 {font-size: 44px;}
 .webBannerText h5, ul.slderList li span {max-width: 100%;}
@@ -526,7 +526,7 @@ margin-top: 0rem !important;
 .howItWorks .col-lg-4.col-md-6.col-sm-12 {
 margin-bottom: 20px;
 }
-.webBanner {background-size: cover;height: 830px;}
+.webBanner {background: url(../images/mobile-bg.png) no-repeat top right;background-size: cover;height: 680px;}
 .webBannerText {padding: 10% 0 0;}
 .webBannerText h5, ul.slderList li span {max-width: 100%;}
 .webBannerText h1 {font-size: 40px;margin-bottom: 10px;}
