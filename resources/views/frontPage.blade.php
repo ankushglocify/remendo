@@ -21,9 +21,9 @@
                       Anniversary|
               </div>
             </div>
-            <h5>The Only App That Personal Reminders For Your Loved once via Text sms & Email.</h5>
+            <h5>The only app that sends you personal reminders For Your Loved ones via Text SMS & Email.</h5>
             <div class="scheduleBtn">
-              <a href="{{url('/register')}}" class="scheduleDemoBtn btnEffect">Free Sign Up <span><i class="fas fa-arrow-right"></i></span></a>
+              <a href="{{url('/register')}}" class="scheduleDemoBtn btnEffect">Get Started for Free <span><i class="fas fa-arrow-right"></i></span></a>
             </div>
           </div>
         </div>
@@ -140,7 +140,7 @@
               <h3>Professional/Office/Commercial</h3>
               <ul class="slderList">
                 <li> <img src="assets/images/check-right.svg" alt=""> <span>You are CEO of a company and you have 200+ employees. Its hard to keep track of every one Birthday</span></li>
-                <li><img src="assets/images/check-right.svg" alt=""> <span>Make your employee feel special bu wishing them on Birthday.</span></li>
+                <li><img src="assets/images/check-right.svg" alt=""> <span>Make your employee feel special by wishing them on Birthday.</span></li>
                 <li><img src="assets/images/check-right.svg" alt=""> <span>Our app will send you personal Notification as text or email.</span></li>
               </ul>
               <div class="scheduleBtn sliderBtn">
