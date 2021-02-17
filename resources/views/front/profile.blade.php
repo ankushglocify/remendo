@@ -30,24 +30,24 @@
           <form action="{{url('profile')}}" method="post">
            {{ csrf_field() }}
             <div class="form-group">
-              <label for="exampleInputEmail1">NAME</label>
+              <label for="exampleInputEmail1">Name</label>
               <input type="name" name="name" class="form-control" id="member_name" value="{{ $data->name}}" aria-describedby="emailHelp" placeholder="Enter name">
             </div>
             <div class="form-group">
-              <label for="exampleInputPassword1">EMAIL</label>
+              <label for="exampleInputPassword1">Email</label>
               <input type="email" name="email" class="form-control" id="member_email" value="{{$data->email}}" placeholder="abc@abc.com">
             </div>
             <div class="form-group">
-              <label for="exampleInputPassword1">CURRENT PASSWORD </label>
+              <label for="exampleInputPassword1">Current Password </label>
               <input type="password" name="current_password" class="form-control" id="member_phone" value="" placeholder="">
             </div>
             <div class="form-group">
-              <label for="exampleInputPassword1">NEW PASSWORD</label>
+              <label for="exampleInputPassword1">New Password</label>
               <input type="password"  name="new_password" class="form-control " id="member_dob" value="" placeholder="">
             </div>
 
             <div class="form-group">
-              <label for="exampleInputPassword1">CONFIRM NEW PASSWORD</label>
+              <label for="exampleInputPassword1">Confirm New Password</label>
               <input type="password" name="new_confirm_password" class="form-control " id="member_aniver" placeholder="" value="">
             </div>
             
