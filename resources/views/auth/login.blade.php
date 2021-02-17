@@ -6,7 +6,7 @@
             <div class="loginDiv">
                 <div class="card loginInfo">
                     <div class="card-body">
-                        <a href="#" target="_self" class="brand-logo"><img class="img-fluid" src="assets/images/logo.png" alt="logo"></a>
+                        <a href="/" target="_self" class="brand-logo"><img class="img-fluid" src="assets/images/logo.png" alt="logo"></a>
                         <h4 class="card-title mb-1">Login</h4>
                         <form method="POST" class="loginForm" action="{{ route('login') }}">
                           @csrf
