@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <title>{{ config('app.name', 'Laravel') }}</title>
+   <title>Remindio - A Simple Birthday Reminder App</title>
  
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
