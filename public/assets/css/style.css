@@ -75,6 +75,13 @@ a.navbarLogo {
     width: 100%;
     max-width: 19%;
 }
+.menuList li.nav-item a.scheduleDemoBtn {
+    color: #fff;
+    padding: 10px 30px !important;
+}
+.menuList li.nav-item:hover a.scheduleDemoBtn {
+    color: #fff;
+}
 /** Banner Css ***/
 .webBanner {
     background: url(../images/home-bg.png) no-repeat top right;

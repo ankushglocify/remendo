@@ -59,7 +59,7 @@
             </div>
             <div class="worksContent">
               <h4>Create Account</h4>
-              <p>Import all your orders with automated channel sync and select the shipment</p>
+              <p>Get started for free by creating an account.</p>
             </div>
           </div>
         </div>
@@ -73,8 +73,8 @@
               <i class="fas fa-address-book"></i>
             </div>
             <div class="worksContent">
-              <h4>Add Your Contact</h4>
-              <p>Based on your requirement select a courier partner</p>
+              <h4>Add Your Contacts</h4>
+              <p>Add your contacts or import them through Excel/CSV spreadsheet.</p>
             </div>
           </div>
         </div>
@@ -88,8 +88,8 @@
               <i class="fas fa-bell"></i>
             </div>
             <div class="worksContent">
-              <h4>Receive Notifications</h4>
-              <p>Pack your orders, print labels and hand it over to the courier partner</p>
+              <h4>Get Reminders</h4>
+              <p>You are all set! you will get reminders on Email and Text SMS on your Phone</p>
             </div>
           </div>
         </div>
