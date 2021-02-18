@@ -12,7 +12,7 @@
                           @csrf
                             <div class="form-group">
                               <label for="email">Name:</label>
-                              <input type="emaameil" class="form-control @error('name') is-invalid @enderror" id="email"  placeholder="john@example.com" name="name" value="{{ old('name') }}" value="{{ old('name') }}" required>
+                              <input type="emaameil" class="form-control @error('name') is-invalid @enderror" id="email"  placeholder="" name="name" value="{{ old('name') }}" value="{{ old('name') }}" required>
                                @error('name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -21,7 +21,7 @@
                             </div>
                             <div class="form-group">
                               <label for="pwd">E-Mail Address:</label>
-                              <input type="email" class="form-control @error('email') is-invalid @enderror" id="pwd" placeholder="" name="email" value="{{ old('email') }}" required>
+                              <input type="email" class="form-control @error('email') is-invalid @enderror" id="pwd" placeholder="john@example.com" name="email" value="{{ old('email') }}" required>
                               @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>

@@ -21,7 +21,7 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-Route::group(['middleware' => 'auth'], function (){
+Route::group(['middleware' => ['auth','admin']], function (){
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/profile', 'UserController@index')->name('profile');
@@ -45,4 +45,8 @@ Route::get('/all-tweets-csv', function(){
   return response()->download($filename, 'sample.csv', $headers);
 });
 
+});
+Route::group(['middleware' => ['auth','superadmin']], function (){
+	Route::get('/admin', 'MemberController@super');
+	Route::get('/superlogout', '\App\Http\Controllers\Auth\LoginController@logout');
 });

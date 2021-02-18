@@ -700,6 +700,16 @@ background: #ff001b;
     margin-bottom: 20px;
 }
 
+p.success_ajax {
+    color: green;
+    font-size: 20px;
+    font-weight: 600;
+}
+p.error_ajax {
+    color: red;
+    font-size: 20px;
+}
+
 /** Media Css ***/
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
     .orderTable th.tableCell, .orderTable td {

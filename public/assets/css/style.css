@@ -573,7 +573,7 @@ margin-bottom: 20px;
 .menuList {margin-top: 20px;}
 .navbar-dark .navbar-nav .nav-link {color: #232323;text-align: center;}
 .demoBtn {display: none;}
-.menuList ul li {background: transparent;}
+.menuList ul li {background: transparent;text-align: center;}
 .menuList ul li:first-child {margin-bottom: 5px;}
 .scheduleBtn {text-align: center;}
 .animateText {font-size: 40px;margin-left: 0;margin-bottom: 10px; }
@@ -584,6 +584,11 @@ margin-bottom: 20px;
 }
 .howItWorks {
     padding: 40px 0 40px;
+}
+.menuList li.nav-item a.scheduleDemoBtn {   
+    width: 100%;
+    max-width: 50%;
+    margin: 0 auto;
 }
 }
 @media only screen and (min-width:100px) and (max-width:320px) {

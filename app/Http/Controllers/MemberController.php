@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Member;
+use App\User;
 use Auth;
 use Validator;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class MemberController extends Controller
 {
@@ -21,6 +23,8 @@ class MemberController extends Controller
         //dd($data);
         return view('front.members',compact('data'));
     }
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -139,7 +143,7 @@ class MemberController extends Controller
             $filename = $file->getClientOriginalExtension();
             if($filename != 'csv'){
                 
-                return response()->json(['status' => 'error', 'msg' =>'Please upload the csv file only.']);
+                return response()->json(['status' => 'error', 'msg' =>'<p class="error_ajax">Please upload the csv file only.</p>']);
                 die('test');
             }
                 $path = request()->file('file')->getRealPath();
@@ -163,9 +167,9 @@ class MemberController extends Controller
                                 ];
 
                                 $v = Validator::make($data, [
-                              'name'            => 'required',
-                              'email'         => 'required|email|unique:members',
-                              'phone'         => 'integer|digits:10'
+                              'name'  => 'required',
+                              'email' => ['required',Rule::unique('members')->where(function ($query) use($Auid) {return $query->where('user_id', $Auid);})],
+                              'phone' => 'integer|digits:10'
                               
                             ]);
 
@@ -176,6 +180,7 @@ class MemberController extends Controller
 
                                 Member::updateOrcreate([
                                 'email' => $memberDataArray[1],
+                                'user_id' => $Auid
                                 ],$data);
                         }
                     } 
@@ -190,16 +195,16 @@ class MemberController extends Controller
                         }  
                         return response()->json(['status' => 'error', 'msg' =>$error_html]);
                     }else{
-                        $error_html.= "<p class='success_ajax'>Row ".$keys.", ".$value[0]." </p>";
-                        return response()->json(['status' => 'error', 'msg' =>$error_html]);
+                        $error_html.= "<p class='success_ajax'>Contact upload successfully.</p>";
+                        return response()->json(['status' => 'success', 'msg' =>$error_html]);
 
                     }
                      
                 }else{
-                   return response()->json(['status' => 'error', 'msg' =>'Please upload the valid csv.']); 
+                   return response()->json(['status' => 'error', 'msg' =>'<p class="error_ajax">Please upload the valid csv.</p>']); 
                 }
             }else{
-                return response()->json(['status' => 'error', 'msg' =>'Please upload the csv file only.']);
+                return response()->json(['status' => 'error', 'msg' =>'<p class="error_ajax">Please upload the csv file only.</p>']);
             }
         } 
         
@@ -277,5 +282,13 @@ class MemberController extends Controller
                     );
             
         echo json_encode($json_data); 
+    }
+
+    public function super()
+    {   
+        $id =  Auth::id();
+        $data = User::where('role',2)->get();
+        //dd($data);
+        return view('front.super.members',compact('data'));
     }
 }

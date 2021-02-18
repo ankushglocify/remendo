@@ -24,9 +24,9 @@
           </button>
           <div class="menuList collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="TopBar">
-              <li>
+              <!-- <li>
                 <a href="{{url('/members')}}" class=""><span>Contacts</span></a>
-              </li>
+              </li> -->
             <li class="nav-item dropdown no-arrow">
                   <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                    <!--  <img src="{{ asset('assets/images/gravatar.jpg') }}" alt=""/> -->
@@ -34,8 +34,8 @@
                   </a>
                 <div class="dropdown-menu" aria-labelledby="pagesDropdown">
                 <ul>
-                    <li><a class="dropdown-item" href="{{url('/profile')}}" >Profile</a></li>
-                    <li><a class="dropdown-item" href="{{url('logout')}}">Logout</a></li>
+                    <!-- <li><a class="dropdown-item" href="{{url('/profile')}}" >Profile</a></li> -->
+                    <li><a class="dropdown-item" href="{{url('superlogout')}}">Logout</a></li>
                 </ul>
                   <form id="logout-form" action="https://www.printslips.com/logout" method="POST" style="display: none;">
                    {{ csrf_field() }}
@@ -133,7 +133,7 @@
         }else{
           $('#preview').html(response.msg);
           $('#import_form')[0].reset();
-          setTimeout(function(){ location.reload(); }, 1000);
+          setTimeout(function(){ $('#exampleModal').hide(); }, 1000);
         }
       }
     });
