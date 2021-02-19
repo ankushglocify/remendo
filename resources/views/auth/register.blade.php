@@ -30,6 +30,16 @@
                             </div>
 
                             <div class="form-group">
+                              <label for="pwd">Phone:</label>
+                              <input type="tel" class="form-control @error('phone') is-invalid @enderror" id="pwd" placeholder="9999999999" name="phone" value="{{ old('phone') }}" >
+                              @error('phone')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+
+                            <div class="form-group">
                               <label for="pwd">Password:</label>
                               <input type="password" class="form-control @error('password') is-invalid @enderror" id="pwd" placeholder="" name="password" required>
                               @error('password')

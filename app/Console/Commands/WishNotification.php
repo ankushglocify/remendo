@@ -65,7 +65,7 @@ class WishNotification extends Command
                     if($aniversary == $monthday && $dob == $monthday){
                         $eventType = 'Aniversary , Birthday';
                     }
-                $data[$parentuser][] = ['username'=>$user->user->name, 'name' =>$user->name ,'email' =>$user->email, 'eventType' =>$eventType,'date' =>$date,'phone' => $user->phone];
+                $data[$parentuser][] = ['username'=>$user->user->name,'userphone'=>$user->user->phone, 'name' =>$user->name ,'email' =>$user->email, 'eventType' =>$eventType,'date' =>$date,'phone' => $user->phone];
                
         }
         
@@ -73,6 +73,7 @@ class WishNotification extends Command
            
             foreach ($data as $key => $value) {
                 $email=$key;
+                $this->sendTextMsg($value);
                 try{
                 Mail::to($email)->send(new BirtdayMail($value));
                 echo "string";
@@ -85,7 +86,34 @@ class WishNotification extends Command
     
         }
         
-
-   //$this->info($i.' Birthday messages sent successfully!');
     }
+
+    public function sendTextMsg ($value){
+        $username = $value[0]['username'];
+        $phone = $value[0]['userphone'];
+        //print_r($value);die('test');
+        $username = "ganesh@glocify.com";
+        $hash = "ecf50a9ae134beef725ebc621e25bfc53a0c48909b168f8d3aa855b82ac19f26";
+
+        // Config variables. Consult http://api.textlocal.in/docs for more info.
+        $test = "0";
+
+        // Data for text message. This is the text message data.
+        $sender = "REMDIO"; // This is who the message appears to be from.
+        $numbers =  $phone; // A single number or a comma-seperated list of numbers
+        $message = "This is a test message from the PHP API script.";
+        // 612 chars or less
+        // A single number or a comma-seperated list of numbers
+        $message = urlencode($message);
+        $data = "username=".$username."&hash=".$hash."&message=".$message."&sender=".$sender."&numbers=".$numbers."&test=".$test;
+        $ch = curl_init('http://api.textlocal.in/send/?');
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $result = curl_exec($ch); // This is the result from the API
+        curl_close($ch);
+        //print_r(json_decode($result));
+        //die();
+        }
+        
 }

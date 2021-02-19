@@ -27,6 +27,7 @@ class UserController extends Controller
 
     public function update(Request $request)
     {   
+      //print_r($request->all());die();
         $id =  Auth::id();
         if($request->filled('new_password')) {
         $v = Validator::make($request->all(), [
@@ -45,7 +46,8 @@ class UserController extends Controller
 
         $v = Validator::make($request->all(), [
           'name'            => 'required',
-          'email'         => 'required|email|unique:users,email,'.$id
+          'email'         => 'required|email|unique:users,email,'.$id,
+          'phone'         => 'required|digits:10',
         ]);
 
           if ($v->fails()) {
@@ -54,7 +56,7 @@ class UserController extends Controller
             ->withErrors($v->errors());
           }
    
-        User::find(auth()->user()->id)->update(['name'=> $request->name, 'email' => $request->email]);
+        User::find(auth()->user()->id)->update(['name'=> $request->name, 'email' => $request->email,'phone' =>$request->phone]);
        return redirect()->back()->with('success','Update successfully');
     }
 

@@ -144,11 +144,16 @@ class MemberController extends Controller
             if($filename != 'csv'){
                 
                 return response()->json(['status' => 'error', 'msg' =>'<p class="error_ajax">Please upload the csv file only.</p>']);
-                die('test');
             }
                 $path = request()->file('file')->getRealPath();
                
                 $file = file($path);
+                $header = explode(',', $file[0]);
+                $correct_header=['name','email','phone','dob','aniversary'];
+                $result=array_intersect($header,$correct_header); 
+                if(count($result) < 5){
+                    return response()->json(['status' => 'error', 'msg' =>'<p class="error_ajax">Format not matched . To check correct format download sample Csv. </p>']);
+                }
                 $members = array_slice($file, 1);
                 if(count($members)){
                     $data =[];
