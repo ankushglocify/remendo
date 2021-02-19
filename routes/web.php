@@ -21,7 +21,8 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-Route::group(['middleware' => ['auth','admin']], function (){
+Auth::routes(['verify' => true]);
+Route::group(['middleware' => ['auth','admin','verified']], function (){
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/profile', 'UserController@index')->name('profile');

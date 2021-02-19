@@ -1,7 +1,33 @@
-@extends('layouts.app')
+@extends('layouts.auth')
 
 @section('content')
-<div class="container">
+<section class="login">
+        <div class="container-fluid">
+            <div class="loginDiv">
+                <div class="card loginInfo">
+                    <div class="card-body">
+                        <a href="/" target="_self" class="brand-logo"><img class="img-fluid" src="{{ asset('assets/images/logo.png') }}" alt="logo"></a>
+                        <h4 class="card-title mb-1">Verify Your Email Address</h4>
+                         @if (session('resent'))
+                        <div class="alert alert-success" role="alert">
+                            {{ __('A fresh verification link has been sent to your email address.') }}
+                        </div>
+                        @endif
+
+                        {{ __('Before proceeding, please check your email for a verification link.') }}
+                        {{ __('If you did not receive the email') }},
+                        <form class="d-inline" method="POST" action="{{ route('verification.resend') }}">
+                            @csrf
+                            <button type="submit" class="btn btn-default submitbtn btnEffect">{{ __('click here to request another') }}</button>.
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<!-- <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -24,5 +50,5 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 @endsection
