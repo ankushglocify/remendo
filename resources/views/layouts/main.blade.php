@@ -133,7 +133,7 @@
         }else{
           $('#preview').html(response.msg);
           $('#import_form')[0].reset();
-          setTimeout(function(){ location.reload(); }, 1000);
+          //setTimeout(function(){ location.reload(); }, 1000);
         }
       }
     });

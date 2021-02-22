@@ -45,9 +45,10 @@ class MemberController extends Controller
      */
     public function store(Request $request)
     {
+        $Auid = Auth::id();
       $v = Validator::make($request->all(), [
           'name'            => 'required',
-          'email'         => 'required|email|unique:members',
+          'email'         => ['required',Rule::unique('members')->where(function ($query) use($Auid) {return $query->where('user_id', $Auid);})],
           'phone'         => 'integer|digits:10'
           
         ]);
@@ -58,7 +59,7 @@ class MemberController extends Controller
         ->withErrors($v->errors());
       }
       //dd($request->all());
-      $Auid = Auth::id();
+      
       $data = [
         'name' =>  $request->name,
         'email'  => $request->email,
@@ -151,7 +152,7 @@ class MemberController extends Controller
                 $header = explode(',', $file[0]);
                 $correct_header=['name','email','phone','dob','aniversary'];
                 $result=array_intersect($header,$correct_header); 
-                if(count($result) < 5){
+                if(count($result) == count($header)){
                     return response()->json(['status' => 'error', 'msg' =>'<p class="error_ajax">Format not matched . To check correct format download sample Csv. </p>']);
                 }
                 $members = array_slice($file, 1);
@@ -293,7 +294,15 @@ class MemberController extends Controller
     {   
         $id =  Auth::id();
         $data = User::where('role',2)->get();
-        //dd($data);
+        //echo "<pre>";
+        //print_r($data);die();
         return view('front.super.members',compact('data'));
+    }
+
+    public function getUserContact(Request $request, $id ){
+
+         $data = Member::where('user_id',$id)->get();
+        return view('front.super.allMembers',compact('data'));
+
     }
 }

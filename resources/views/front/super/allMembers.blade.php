@@ -49,7 +49,7 @@
                         <tr>
                           <th class="tableCell"><span style="">Name</span></th>
                           <th class="tableCell"><span style="">Email</span></th>
-                          <th class="tableCell"><span style="">Contacts Count</span></th>
+                          <th class="tableCell"><span style="">Phone</span></th>
                           <th class="tableCell"><span style="">Created AT</span></th>
                           <th class="tableCell"><span style="">Updated AT</span></th>
                         </tr>
@@ -59,7 +59,7 @@
                         <tr>
                          <td>{{$value->name}}</td>
                          <td>{{$value->email}}</td>
-                         <td><a target="_blank" href="{{url('getUserContact')}}/{{$value->id}}">{{count($value->member)}}</a></td>
+                         <td>{{$value->phone}}</a></td>
                          <td>{{$value->created_at ? date('d-m-Y', strtotime($value->created_at)) :''}}</td>
                          <td>{{$value->updated_at ? date('d-m-Y', strtotime($value->updated_at)) : ''}}</td>
                         </tr>

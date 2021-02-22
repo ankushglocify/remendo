@@ -50,4 +50,5 @@ Route::get('/all-tweets-csv', function(){
 Route::group(['middleware' => ['auth','superadmin']], function (){
 	Route::get('/admin', 'MemberController@super');
 	Route::get('/superlogout', '\App\Http\Controllers\Auth\LoginController@logout');
+    Route::get('/getUserContact/{id}', 'MemberController@getUserContact');
 });
