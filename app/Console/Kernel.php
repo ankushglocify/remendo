@@ -25,9 +25,7 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         $schedule->command('wish:notification')
-            ->daily();
-        $schedule->command('wish:aniversary')
-            ->daily();
+            ->daily();;
     }
 
     /**

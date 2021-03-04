@@ -89,22 +89,69 @@ class WishNotification extends Command
     }
 
     public function sendTextMsg ($value){
-        $username = $value[0]['username'];
-        $phone = $value[0]['userphone'];
+        //echo "<pre>";
+        //print_r($value);die('test');
+        $birthday='';
+        $Anniversary='';
+        foreach ($value as $key => $data) {
+            if($data['eventType'] =='Birthday'){
+                $birthday.= "\r\n".$data['name']." - ".$data['phone'];
+            }elseif($data['eventType'] =='Aniversary'){
+                $Anniversary.= "\r\n".$data['name']." - ".$data['phone'];
+            }else{
+                 $birthday.= "\r\n".$data['name']." - ".$data['phone'];
+                 $Anniversary.= "\r\n".$data['name']." - ".$data['phone'] ;
+            }
+           
+        }
+        //$Anniversary = implode('"\r\n"', $Anniversary);
+        //$birthday = implode('"\r\n"', $birthday);
+        //echo $Anniversary;
+        //echo $birthday;die();
+        
         //print_r($value);die('test');
         $username = "ganesh@glocify.com";
         $hash = "ecf50a9ae134beef725ebc621e25bfc53a0c48909b168f8d3aa855b82ac19f26";
-
+        $name =$value[0]['username'];
+        $phone = $value[0]['userphone'];
         // Config variables. Consult http://api.textlocal.in/docs for more info.
-        $test = "0";
+        $test = true;
 
         // Data for text message. This is the text message data.
-        $sender = "REMDIO"; // This is who the message appears to be from.
+        $sender = "RMNDIO"; // This is who the message appears to be from.
         $numbers =  $phone; // A single number or a comma-seperated list of numbers
-        $message = "This is a test message from the PHP API script.";
+        if($Anniversary != '' && $birthday !=''){
+            $message = 'Dear '.$name.'
+
+Today Birthdays 
+ '.$birthday.'
+
+Today Anniversaries 
+ '.$Anniversary.'
+
+Thanks
+Remindio Team';
+        }else if($Anniversary != '' && $birthday ==''){
+            $message = 'Dear '.$name.'
+
+Today Anniversaries:
+ '.$Anniversary.'
+
+Thanks,
+Remindio Team';
+        }else{
+            $message = 'Dear '.$name.'
+
+Today Birthdays:
+ '.$birthday.'
+
+Thanks,
+Remindio Team';
+        }
+        
         // 612 chars or less
         // A single number or a comma-seperated list of numbers
-        $message = urlencode($message);
+        $message = rawurlencode($message);
         $data = "username=".$username."&hash=".$hash."&message=".$message."&sender=".$sender."&numbers=".$numbers."&test=".$test;
         $ch = curl_init('http://api.textlocal.in/send/?');
         curl_setopt($ch, CURLOPT_POST, true);
