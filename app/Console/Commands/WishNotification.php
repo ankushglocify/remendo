@@ -89,8 +89,7 @@ class WishNotification extends Command
     }
 
     public function sendTextMsg ($value){
-        //echo "<pre>";
-        //print_r($value);die('test');
+
         $birthday='';
         $Anniversary='';
         foreach ($value as $key => $data) {
@@ -104,12 +103,7 @@ class WishNotification extends Command
             }
            
         }
-        //$Anniversary = implode('"\r\n"', $Anniversary);
-        //$birthday = implode('"\r\n"', $birthday);
-        //echo $Anniversary;
-        //echo $birthday;die();
-        
-        //print_r($value);die('test');
+
         $username = "ganesh@glocify.com";
         $hash = "ecf50a9ae134beef725ebc621e25bfc53a0c48909b168f8d3aa855b82ac19f26";
         $name =$value[0]['username'];
@@ -159,8 +153,6 @@ Remindio Team';
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $result = curl_exec($ch); // This is the result from the API
         curl_close($ch);
-        //print_r(json_decode($result));
-        //die();
         }
         
 }
