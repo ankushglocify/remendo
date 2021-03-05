@@ -94,12 +94,12 @@ class WishNotification extends Command
         $Anniversary='';
         foreach ($value as $key => $data) {
             if($data['eventType'] =='Birthday'){
-                $birthday.= "\r\n".$data['name']." - ".$data['phone'];
+                $birthday.= ($birthday == '')? $data['name']." - ".$data['phone'] :"\r\n".$data['name']." - ".$data['phone'];
             }elseif($data['eventType'] =='Aniversary'){
-                $Anniversary.= "\r\n".$data['name']." - ".$data['phone'];
+                $Anniversary.= ($Anniversary == '')? $data['name']." - ".$data['phone'] :"\r\n".$data['name']." - ".$data['phone'];
             }else{
-                 $birthday.= "\r\n".$data['name']." - ".$data['phone'];
-                 $Anniversary.= "\r\n".$data['name']." - ".$data['phone'] ;
+                 $birthday.= ($birthday == '')? $data['name']." - ".$data['phone'] :"\r\n".$data['name']." - ".$data['phone'];
+                 $Anniversary.= ($Anniversary == '')? $data['name']." - ".$data['phone'] :"\r\n".$data['name']." - ".$data['phone'] ;
             }
            
         }
@@ -115,32 +115,36 @@ class WishNotification extends Command
         $sender = "RMNDIO"; // This is who the message appears to be from.
         $numbers =  $phone; // A single number or a comma-seperated list of numbers
         if($Anniversary != '' && $birthday !=''){
-            $message = 'Dear '.$name.'
+            $message = 'Dear '.$name.',
 
-Today Birthdays 
+Send Birthday wishes to:
+
  '.$birthday.'
 
-Today Anniversaries 
+Send Anniversary wishes to:
+
  '.$Anniversary.'
 
-Thanks
-Remindio Team';
+Regards,
+Team Remindio';
         }else if($Anniversary != '' && $birthday ==''){
-            $message = 'Dear '.$name.'
+            $message = 'Dear '.$name.',
 
-Today Anniversaries:
+Send Anniversary wishes to:
+
  '.$Anniversary.'
 
-Thanks,
-Remindio Team';
+Regards,
+Team Remindio';
         }else{
-            $message = 'Dear '.$name.'
+            $message = 'Dear '.$name.',
 
-Today Birthdays:
+Send Birthday wishes to:
+
  '.$birthday.'
 
-Thanks,
-Remindio Team';
+Regards,
+Team Remindio';
         }
         
         // 612 chars or less
@@ -153,6 +157,8 @@ Remindio Team';
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $result = curl_exec($ch); // This is the result from the API
         curl_close($ch);
+        //print_r(json_decode($result));
+        //die();
         }
         
 }
