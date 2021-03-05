@@ -77,12 +77,12 @@ class WishNotification extends Command
                 try{
                 Mail::to($email)->send(new BirtdayMail($value));
                 echo "string";
-            }
-            catch(Exception $e){
-                echo $e->getMessage();// Never reached
-            }
-                
                 }
+                catch(Exception $e){
+                    echo $e->getMessage();// Never reached
+                }
+                
+            }
     
         }
         
@@ -109,7 +109,7 @@ class WishNotification extends Command
         $name =$value[0]['username'];
         $phone = $value[0]['userphone'];
         // Config variables. Consult http://api.textlocal.in/docs for more info.
-        $test = true;
+        $test = false;
 
         // Data for text message. This is the text message data.
         $sender = "RMNDIO"; // This is who the message appears to be from.
